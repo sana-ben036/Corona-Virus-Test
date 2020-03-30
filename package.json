@@ -1,0 +1,29 @@
+{
+  "name": "c2n3_c3n3-master",
+  "version": "1.0.0",
+  "description": "website of corona virus",
+  "main": "index.js",
+  "scripts": {
+    "node-sass": "node-sass -w --output-style compressed public/scss -o public/css",
+    "concat-css": " concat -o public/css/style.css public/css/section1.css public/css/section2.css public/css/section3.css ",
+    "prefix-css": "postcss --use autoprefixer -b 'last 5 versions' public/scss -o public/css"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sana-ben036/C2N3_C3N3.git"
+  },
+  "author": "sana ben",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sana-ben036/C2N3_C3N3/issues"
+  },
+  "homepage": "https://github.com/sana-ben036/C2N3_C3N3#readme",
+  "dependencies": {
+    "autoprefixer": "^9.7.5",
+    "concat": "^1.0.3",
+    "node-sass": "^4.13.1",
+    "npm-watch": "^0.6.0",
+    "postcss-cli": "^7.1.0"
+  }
+}
