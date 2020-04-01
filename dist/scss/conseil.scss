@@ -1,0 +1,74 @@
+@import"main.scss";
+.conseil{
+    text-align: center;
+    line-height: 1.5;
+    h3{
+        color: $color3;
+        font-weight: 700;
+        font-size: larger;
+        padding: 10px 0;
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px;
+        .adv{
+            display: inline-block;
+            width: 30%;
+            height: 650px;
+            align-content: center;
+            justify-content: space-around;
+            color: $color2;  
+            font-size: medium; 
+            font-weight: 700;
+            &__item{
+                width: 50%;
+                height: 200px;
+                margin: auto;
+                text-align: center;
+                img{
+                    width: 45%;
+                }
+                .hand{
+                    width: 62%;
+                    margin-top: 25px;
+                }
+                
+            }
+        }
+        
+    }
+    
+}
+.info{
+    background-color: $bgcolor1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 40px;
+    button{
+        height: 70px;
+        width: 15%;
+        border: 2px solid $color3;
+        border-radius: 5px;
+        background-color: $color3;
+        color: $color4;
+        font-weight: 700;
+        font-size: medium;
+    }
+    .text{
+        text-align: center;
+        h2{
+            color: $color3;
+        }
+        p{
+            color: $color2;
+            font-size: large;
+            font-weight: 700;
+        }
+    }
+
+    
+    
+}
