@@ -4,7 +4,7 @@
   "description": "website of corona virus",
   "main": "index.js",
   "scripts": {
-    "node-sass": "node-sass -w --output-style compressed dist/scss -o dist/css",
+    "node-sass": "node-sass -w  dist/scss -o dist/css",
     "concat": "concat -o dist/css/style.css dist/css/main.css dist/css/header.css",
     "prefix": "postcss dist/css/style.css --use autoprefixer -d dist/css/prefixed/"
 

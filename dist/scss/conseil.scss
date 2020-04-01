@@ -1,12 +1,15 @@
 @import"main.scss";
+ 
 .conseil{
     text-align: center;
     line-height: 1.5;
-    h3{
+    padding: 10px;
+    h3{ 
         color: $color3;
         font-weight: 700;
         font-size: larger;
-        padding: 10px 0;
+        padding: 20px;
+        
     }
     .container{
         display: flex;
@@ -46,29 +49,82 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 40px;
-    button{
-        height: 70px;
-        width: 15%;
-        border: 2px solid $color3;
-        border-radius: 5px;
-        background-color: $color3;
-        color: $color4;
-        font-weight: 700;
-        font-size: medium;
-    }
-    .text{
+    padding: 30px;
+    &__item{
+        display: inline-block;
         text-align: center;
-        h2{
-            color: $color3;
-        }
-        p{
-            color: $color2;
-            font-size: large;
+        width: 30%;
+        margin: auto;
+        &--btn{
+            height: 70px;
+            width: 20%;
+            border: 2px solid $color3;
+            border-radius: 5px;
+            background-color: $color3;
+            color: $color4;
             font-weight: 700;
+            font-size: large;
+        }
+        &--text{
+            h2{
+                color: $color3;
+            }
+            p{
+                color: $color2;
+                font-size: larger;
+                font-weight:600;
+            }
+        }
+    }    
+}
+.symptômes{
+    @extend .conseil;
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 50%;
+        margin: auto;
+        .groupe{
+            display: inline-block;
+            width: 30%;
+            margin: auto;
+
+            &__item{
+                height: 100%;
+                p{
+                    font-size: medium;
+                    font-weight: 700;
+                }
+            }       
         }
     }
+}
+.transmission{
+    @extend .conseil;
+    .container{
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: auto;
+        &__item{
+            position: relative;
+            width: 40%;
+            margin: auto;
+            display: inline-block;
+            .gout{
+                position: absolute;
+                top: 65px ;
+                left: 115px;
+            }
+            p{
+                font-size: medium;
+                font-weight: 700;
+                color: $color2;    
+            }
+        }
+    }
+    
 
-    
-    
 }
