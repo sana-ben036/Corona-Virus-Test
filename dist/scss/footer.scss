@@ -1,5 +1,40 @@
+@import"main.scss";
 footer{
     .about{
-        
+        text-align: center;
+        padding: 20px;
+        .details{
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            .menu{
+                width:20% ;
+            }
+            .contact{
+                width: 30%;
+                color: $color3;
+                p{
+                    font-size: large;
+                    font-weight: 700;
+                    color: $color1;
+                    margin: 20px 0;
+                    span{
+                        color: $color5;
+                    }
+
+                }
+                
+
+            }
+            .discription{
+                width: 40%;
+                color:$color6;
+                text-align: left;
+                font-size: large;
+                margin: auto;
+
+            }
+            
+        }
     }
 }
