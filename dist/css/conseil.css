@@ -77,10 +77,11 @@ body {
   margin: auto; }
   .symptômes .container .groupe {
     display: inline-block;
-    width: 30%;
     margin: auto; }
     .symptômes .container .groupe__item {
-      height: 100%; }
+      display: block;
+      flex-direction: column;
+      margin: auto; }
       .symptômes .container .groupe__item p {
         font-size: medium;
         font-weight: 700; }
@@ -93,14 +94,17 @@ body {
   margin: auto; }
   .transmission .container__item {
     position: relative;
-    width: 40%;
+    width: 50%;
     margin: auto;
     display: inline-block; }
     .transmission .container__item .gout {
       position: absolute;
       top: 65px;
-      left: 115px; }
+      left: 150px; }
     .transmission .container__item p {
+      width: 65%;
+      height: 80px;
+      margin: auto;
       font-size: medium;
       font-weight: 700;
       color: #1A519E; }
@@ -134,9 +138,29 @@ body {
         border-radius: 5px;
         width: 80%;
         margin: auto; }
+      .recommandation .container .appel a:link {
+        text-decoration-color: #F4CF1B;
+        color: #FFFFFF;
+        font-size: larger;
+        font-weight: 600; }
 
 .test {
   background-color: #96C5DC;
   text-align: center;
   color: #1078AD;
-  font-size: medium; }
+  font-size: large;
+  display: flex;
+  flex-direction: column; }
+  .test img {
+    width: 3%;
+    margin: 5px auto; }
+  .test button {
+    width: 20%;
+    height: 40px;
+    margin: 5px auto;
+    border: 2px solid #1078AD;
+    border-radius: 5px;
+    background-color: #1078AD;
+    color: #FFFFFF;
+    font-size: larger;
+    font-weight: 700; }

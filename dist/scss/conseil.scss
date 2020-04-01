@@ -87,15 +87,19 @@
         margin: auto;
         .groupe{
             display: inline-block;
-            width: 30%;
             margin: auto;
 
+
             &__item{
-                height: 100%;
+                display: block;
+                flex-direction: column;
+                margin: auto;
+                //height: 50%;
                 p{
                     font-size: medium;
                     font-weight: 700;
                 }
+               
             }       
         }
     }
@@ -110,19 +114,24 @@
         margin: auto;
         &__item{
             position: relative;
-            width: 40%;
+            width: 50%;
             margin: auto;
             display: inline-block;
             .gout{
                 position: absolute;
                 top: 65px ;
-                left: 115px;
+                left: 150px;
             }
             p{
+                width: 65%;  
+                height: 80px;
+                margin: auto;
                 font-size: medium;
                 font-weight: 700;
-                color: $color2;    
+                color: $color2;  
+                
             }
+            
         }
     }
     
@@ -162,8 +171,13 @@
                 border: 2px solid $bgcolor2;
                 border-radius: 5px;
                 width: 80%;
-                margin: auto;
-                
+                margin: auto;   
+            }
+            a:link{
+                text-decoration-color: $bgcolor2;
+                color: $color4;
+                font-size: larger;
+                font-weight: 600;  
             }
         }
     }   
@@ -172,5 +186,22 @@
     background-color: $bgcolor3;
     text-align: center;
     color: $color3;
-    font-size: medium;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    img{
+        width: 3%;
+        margin: 5px auto;
+    }
+    button{
+        width: 20%;
+        height: 40px;
+        margin: 5px auto;
+        border: 2px solid $color3;
+        border-radius: 5px;
+        background-color: $color3;
+        color: $color4;
+        font-size: larger;
+        font-weight: 700;
+    }
 }
