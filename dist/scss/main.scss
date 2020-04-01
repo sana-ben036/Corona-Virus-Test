@@ -8,15 +8,16 @@ $bgcolor1:#D0E5F0;
 $bgcolor2:#F4CF1B;
 $primaryfont: Cairo;
 
-*{
-    padding:0;
+* {
+    padding: 0;
     margin: 0;
-}     
+    box-sizing: border-box;
 
-body{
+}
+
+body {
     font-family: $primaryfont;
     font-size: 1.5em;
-    
-    
+
 
 }
