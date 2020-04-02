@@ -15,20 +15,20 @@ header nav {
   justify-content: space-between;
   padding: 5px 8px;
   background-image: url("../Design/Assets/png/Merged bar-1.png"); }
-  header nav .logo, header nav .menu {
-    display: inline-block; }
-  header nav .menu__item {
-    margin: 5px 15px;
-    font-size: large;
-    font-weight: 700;
-    justify-items: center; }
-    header nav .menu__item--btn {
-      width: 100px;
-      height: 40px;
-      margin-top: 25px;
-      border: 2px solid #1A519E;
-      border-radius: 10px;
-      background-color: transparent; }
+  header nav .menu {
+    margin: auto 0; }
+    header nav .menu__item {
+      margin: auto 15px;
+      font-size: large;
+      font-weight: 700;
+      text-decoration: none;
+      color: #1A519E; }
+      header nav .menu__item--btn {
+        width: 100px;
+        height: 40px;
+        border: 1px solid #1A519E;
+        border-radius: 10px;
+        background-color: transparent; }
 
 header .note {
   height: 120px;

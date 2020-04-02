@@ -10,20 +10,19 @@ header{
         justify-content: space-between;
         padding: 5px 8px;
         background-image: url('../Design/Assets/png/Merged\ bar-1.png');
-        .logo,.menu{
-            display: inline-block;
-        }
+        
        .menu{
+           margin: auto 0;
            &__item{
-               margin: 5px 15px; // margin:auto a essayé
+               margin: auto 15px; 
                font-size: large;
                font-weight: 700;
-               justify-items: center;
+               text-decoration: none;
+               color: $color2;
                &--btn{
                    width: 100px;
                    height: 40px;
-                   margin-top: 25px;
-                   border: 2px solid $color2;
+                   border: 1px solid $color2;
                    border-radius: 10px;
                    background-color: transparent;
                }
