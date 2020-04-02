@@ -8,8 +8,7 @@
         color: $color3;
         font-weight: 700;
         font-size: larger;
-        padding: 20px;
-        
+        padding: 20px;    
     }
     .container{
         display: flex;
@@ -17,7 +16,7 @@
         justify-content: center;
         padding: 20px;
         .adv{
-            display: inline-block;
+            //display: inline-block;
             width: 30%;
             height: 650px;
             align-content: center;
@@ -50,32 +49,33 @@
     flex-direction: row;
     justify-content: space-around;
     padding: 30px;
-    &__item{
-        display: inline-block;
-        text-align: center;
+    &__btn{
         width: 30%;
         margin: auto;
-        &--btn{
-            height: 70px;
-            width: 20%;
-            border: 2px solid $color3;
-            border-radius: 5px;
-            background-color: $color3;
-            color: $color4;
-            font-weight: 700;
-            font-size: large;
+        height: 70px;
+        width: 20%;
+        border: 2px solid $color3;
+        border-radius: 5px;
+        background-color: $color3;
+        color: $color4;
+        font-weight: 700;
+        font-size: large;
+    }   
+    &__text{
+        width: 30%;
+        margin: auto;
+        text-align: center;
+        h2{
+            color: $color3;
         }
-        &--text{
-            h2{
-                color: $color3;
-            }
-            p{
-                color: $color2;
-                font-size: larger;
-                font-weight:600;
-            }
+        p{
+            color: $color2;
+            font-size: larger;
+            font-weight:600;
         }
-    }    
+            
+    }
+        
 }
 .symptômes{
     @extend .conseil;

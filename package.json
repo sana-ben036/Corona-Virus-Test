@@ -6,8 +6,8 @@
   "scripts": {
     "sass": "node-sass -w  dist/scss -o dist/css",
     "concat": "concat -o dist/css/style.css dist/css/main.css dist/css/header.css dist/css/conseil.css dist/css/footer.css",
-    "prefix": "postcss dist/css/style.css --use autoprefixer -d dist/css/prefixed/",
-    "compress": "node-sass dist/css/prefixed/style.css dist/css/style.compress.css  --output-style compressed",
+    "prefix": "postcss dist/css/style.css --use autoprefixer  --map=false -o dist/css/prefix.css",
+    "compress": "node-sass dist/css/prefix.css dist/css/style.compress.css  --output-style compressed",
     "build": "npm-run-all concat prefix compress"
   },
   "repository": {

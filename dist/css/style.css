@@ -76,7 +76,6 @@ body {
     justify-content: center;
     padding: 20px; }
     .conseil .container .adv, .symptômes .container .adv, .transmission .container .adv, .recommandation h3 .container .adv {
-      display: inline-block;
       width: 30%;
       height: 650px;
       align-content: center;
@@ -101,23 +100,24 @@ body {
   flex-direction: row;
   justify-content: space-around;
   padding: 30px; }
-  .info__item {
-    display: inline-block;
-    text-align: center;
+  .info__btn {
     width: 30%;
-    margin: auto; }
-    .info__item--btn {
-      height: 70px;
-      width: 20%;
-      border: 2px solid #1078AD;
-      border-radius: 5px;
-      background-color: #1078AD;
-      color: #FFFFFF;
-      font-weight: 700;
-      font-size: large; }
-    .info__item--text h2 {
+    margin: auto;
+    height: 70px;
+    width: 20%;
+    border: 2px solid #1078AD;
+    border-radius: 5px;
+    background-color: #1078AD;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: large; }
+  .info__text {
+    width: 30%;
+    margin: auto;
+    text-align: center; }
+    .info__text h2 {
       color: #1078AD; }
-    .info__item--text p {
+    .info__text p {
       color: #1A519E;
       font-size: larger;
       font-weight: 600; }
