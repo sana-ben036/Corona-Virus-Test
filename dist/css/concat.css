@@ -8,6 +8,41 @@ body {
   font-family: Cairo;
   font-size: 1.5em; }
 
+header nav {
+  height: 90px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 8px;
+  background-image: url("../Design/Assets/png/Merged bar-1.png"); }
+  header nav .menu {
+    margin: auto 0; }
+    header nav .menu__item {
+      margin: auto 15px;
+      font-size: large;
+      font-weight: 700;
+      text-decoration: none;
+      color: #1A519E; }
+      header nav .menu__item--btn {
+        width: 100px;
+        height: 40px;
+        border: 1px solid #1A519E;
+        border-radius: 10px;
+        background-color: transparent; }
+
+header .note {
+  height: 120px;
+  text-align: center;
+  background-color: #F4CF1B; }
+  header .note h3 {
+    font-size: large;
+    color: #000000; }
+  header .note p {
+    font-size: medium;
+    font-weight: 700;
+    color: #1078AD; }
+
 .conseil, .symptômes, .transmission, .recommandation h3 {
   text-align: center;
   line-height: 1.5;
@@ -164,3 +199,47 @@ body {
     color: #FFFFFF;
     font-size: larger;
     font-weight: 700; }
+
+footer .about {
+  text-align: center;
+  padding: 20px; }
+  footer .about .details {
+    padding: 10px;
+    display: flex;
+    flex-direction: row; }
+    footer .about .details .menu {
+      width: 20%;
+      display: flex;
+      flex-direction: column; }
+      footer .about .details .menu__item {
+        font-size: large;
+        font-weight: 700;
+        margin: 10px 0;
+        text-decoration: none;
+        color: #1078AD; }
+        footer .about .details .menu__item--btn {
+          width: 100px;
+          height: 40px;
+          margin: 0 auto;
+          margin-top: 10px;
+          border: 1px solid #1A519E;
+          border-radius: 10px;
+          background-color: transparent; }
+        footer .about .details .menu__item--active {
+          color: #000000; }
+    footer .about .details .contact {
+      width: 30%;
+      color: #1078AD; }
+      footer .about .details .contact p {
+        font-size: large;
+        font-weight: 700;
+        color: #000000;
+        margin: 20px 0; }
+        footer .about .details .contact p span {
+          color: #369D53; }
+    footer .about .details .discription {
+      width: 40%;
+      color: #7F7F7F;
+      text-align: left;
+      font-size: large;
+      margin: auto; }

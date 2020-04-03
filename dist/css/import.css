@@ -174,8 +174,7 @@ header .note {
         width: 80%;
         margin: auto; }
       .recommandation .container .appel a:link {
-        -webkit-text-decoration-color: #F4CF1B;
-                text-decoration-color: #F4CF1B;
+        text-decoration-color: #F4CF1B;
         color: #FFFFFF;
         font-size: larger;
         font-weight: 600; }
@@ -244,5 +243,3 @@ footer .about {
       text-align: left;
       font-size: large;
       margin: auto; }
-
-/*# sourceMappingURL=prefix.css.map */

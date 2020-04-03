@@ -4,10 +4,10 @@
   "description": "website of corona virus",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass -w  dist/scss -o dist/css",
-    "concat": "concat -o dist/css/style.css dist/css/main.css dist/css/header.css dist/css/conseil.css dist/css/footer.css",
-    "prefix": "postcss dist/css/style.css --use autoprefixer  --map=false -o dist/css/prefix.css",
-    "compress": "node-sass dist/css/prefix.css dist/css/style.compress.css  --output-style compressed",
+    "sass": "node-sass -w  dist/scss/import.scss -o dist/css",
+    "concat": "concat -o dist/css/concat.css  dist/css/import.css",
+    "prefix": "postcss dist/css/concat.css --use autoprefixer  --map=false -o dist/css/prefix.css",
+    "compress": "node-sass dist/css/prefix.css dist/css/style.css  --output-style compressed",
     "build": "npm-run-all concat prefix compress"
   },
   "repository": {

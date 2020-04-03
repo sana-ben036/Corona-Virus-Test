@@ -1,4 +1,3 @@
-@import"main.scss";
 footer{
     .about{
         text-align: center;
@@ -16,11 +15,7 @@ footer{
                     font-weight: 700;
                     margin: 10px 0;
                     text-decoration: none;
-                    color: $color3;
-                    a:visited{
-                        color:$color1;
-                    }
-                    
+                    color: $color3;  
                     &--btn{
                         width: 100px;
                         height: 40px;
@@ -30,6 +25,10 @@ footer{
                         border-radius: 10px;
                         background-color: transparent;
                     }
+                    &--active{
+                        color:$color1;
+                    }
+                    
 
                 }
             }
