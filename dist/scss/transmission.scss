@@ -1,0 +1,33 @@
+.transmission{
+    @extend .conseil;
+    .container{
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: auto;
+        &__item{
+            position: relative;
+            width: 50%;
+            margin: auto;
+            display: inline-block;
+            .gout{
+                position: absolute;
+                top: 65px ;
+                left: 150px;
+            }
+            p{
+                width: 65%;  
+                height: 80px;
+                margin: auto;
+                font-size: medium;
+                font-weight: 700;
+                color: $color2;  
+                
+            }
+            
+        }
+    }
+    
+
+}

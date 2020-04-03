@@ -1,0 +1,48 @@
+ 
+.conseil{
+    text-align: center;
+    line-height: 1.5;
+    padding: 10px;
+    h3{ 
+        color: $color3;
+        font-weight: 700;
+        font-size: larger;
+        padding: 20px;    
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px;
+        .adv{
+            //display: inline-block;
+            width: 30%;
+            height: 650px;
+            align-content: center;
+            justify-content: space-around;
+            color: $color2;  
+            font-size: medium; 
+            font-weight: 700;
+            &__item{
+                width: 50%;
+                height: 200px;
+                margin: auto;
+                text-align: center;
+                img{
+                    width: 45%;
+                }
+                .hand{
+                    width: 62%;
+                    margin-top: 25px;
+                }
+                
+            }
+        }
+        
+    }
+    
+}
+
+
+
+

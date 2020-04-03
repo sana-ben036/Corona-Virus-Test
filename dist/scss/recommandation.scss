@@ -1,0 +1,45 @@
+.recommandation{
+    background-color: $color3;
+    padding: 20px;
+    h3{
+        @extend .conseil;
+        color:$bgcolor1;
+
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+        .text{
+            color: $color4;
+            font-size: large;
+            font-weight: bold;
+            text-align: left;
+            span{
+                color: $color1;
+            }
+        }
+        .appel{
+            width: 20%;
+            text-align: center;
+            h3{
+                color:$bgcolor2;
+            }
+            p{
+                color:$color3;
+                background-color:$bgcolor2 ;
+                border: 2px solid $bgcolor2;
+                border-radius: 5px;
+                width: 80%;
+                margin: auto;   
+            }
+            a:link{
+                text-decoration-color: $bgcolor2;
+                color: $color4;
+                font-size: larger;
+                font-weight: 600;
+            }
+        }
+    }   
+}

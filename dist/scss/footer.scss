@@ -28,8 +28,6 @@ footer{
                     &--active{
                         color:$color1;
                     }
-                    
-
                 }
             }
             .contact{
@@ -57,6 +55,13 @@ footer{
 
             }
             
+        }
+        .barre{
+            height: 50px;
+            width: 100%;
+            background-color: $color3;
+            border-radius: 10px 10px 0 0;
+            padding: -30px;
         }
     }
 }

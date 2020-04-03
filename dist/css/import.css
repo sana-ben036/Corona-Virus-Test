@@ -190,7 +190,7 @@ header .note {
     width: 3%;
     margin: 5px auto; }
   .test button {
-    width: 20%;
+    width: 600px;
     height: 40px;
     margin: 5px auto;
     border: 2px solid #1078AD;
@@ -243,3 +243,23 @@ footer .about {
       text-align: left;
       font-size: large;
       margin: auto; }
+  footer .about .barre {
+    height: 50px;
+    width: 100%;
+    background-color: #1078AD;
+    border-radius: 10px 10px 0 0;
+    padding: -30px; }
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  padding: 20px; }
+  .hero .team {
+    width: 50%; }
+  .hero .test {
+    width: 50%;
+    font-size: larger;
+    font-weight: 600;
+    background-color: transparent; }
+    .hero .test p {
+      color: #7F7F7F; }

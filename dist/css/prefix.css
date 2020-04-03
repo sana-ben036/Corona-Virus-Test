@@ -245,4 +245,12 @@ footer .about {
       font-size: large;
       margin: auto; }
 
+.hero {
+  display: flex;
+  flex-direction: row; }
+  .hero .team {
+    width: 40%; }
+  .hero .test {
+    width: 50%; }
+
 /*# sourceMappingURL=prefix.css.map */
