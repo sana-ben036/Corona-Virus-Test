@@ -1,13 +1,4 @@
 @charset "UTF-8";
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box; }
-
-body {
-  font-family: Cairo;
-  font-size: 1.5em; }
-
 header {
   position: sticky;
   top: 0;
@@ -27,7 +18,9 @@ header {
         font-size: large;
         font-weight: 700;
         text-decoration: none;
-        color: #1A519E; }
+        color: #000000; }
+        header nav .menu__item--active {
+          color: #1A519E; }
         header nav .menu__item--btn {
           width: 100px;
           height: 40px;
@@ -47,38 +40,54 @@ header {
     font-weight: 700;
     color: #1078AD; }
 
-.conseil, .symptômes, .transmission, .recommandation h3 {
+.hero {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 20px 60px 20px; }
+  .hero .team {
+    width: 50%; }
+  .hero .test {
+    width: 50%;
+    background-color: transparent; }
+    .hero .test p {
+      color: #7F7F7F;
+      padding: 0 100px; }
+
+.protection, .symptômes, .transmission, .recommandation {
   text-align: center;
   line-height: 1.5;
-  padding: 10px; }
-  .conseil h3, .symptômes h3, .transmission h3, .recommandation h3 h3 {
+  padding: 20px 0; }
+  .protection h3, .symptômes h3, .transmission h3, .recommandation h3 {
     color: #1078AD;
-    font-weight: 700;
     font-size: larger;
+    font-weight: 700;
     padding: 20px; }
-  .conseil .container, .symptômes .container, .transmission .container, .recommandation h3 .container {
+  .protection .container, .symptômes .container, .transmission .container, .recommandation .container {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 20px; }
-    .conseil .container .adv, .symptômes .container .adv, .transmission .container .adv, .recommandation h3 .container .adv {
-      width: 30%;
-      height: 650px;
-      align-content: center;
-      justify-content: space-around;
-      color: #1A519E;
-      font-size: medium;
-      font-weight: 700; }
-      .conseil .container .adv__item, .symptômes .container .adv__item, .transmission .container .adv__item, .recommandation h3 .container .adv__item {
-        width: 50%;
-        height: 200px;
+    flex-direction: column;
+    width: 90%;
+    margin: auto; }
+    .protection .container .conseil, .symptômes .container .conseil, .transmission .container .conseil, .recommandation .container .conseil {
+      display: flex;
+      flex-direction: row;
+      height: 250px; }
+      .protection .container .conseil__item, .symptômes .container .conseil__item, .transmission .container .conseil__item, .recommandation .container .conseil__item {
+        width: 20%;
         margin: auto;
-        text-align: center; }
-        .conseil .container .adv__item img, .symptômes .container .adv__item img, .transmission .container .adv__item img, .recommandation h3 .container .adv__item img {
-          width: 45%; }
-        .conseil .container .adv__item .hand, .symptômes .container .adv__item .hand, .transmission .container .adv__item .hand, .recommandation h3 .container .adv__item .hand {
-          width: 62%;
-          margin-top: 25px; }
+        align-items: center; }
+        .protection .container .conseil__item--width, .symptômes .container .conseil__item--width, .transmission .container .conseil__item--width, .recommandation .container .conseil__item--width {
+          width: 35%; }
+        .protection .container .conseil__item p, .symptômes .container .conseil__item p, .transmission .container .conseil__item p, .recommandation .container .conseil__item p {
+          color: #1A519E;
+          font-size: large;
+          font-weight: 700;
+          text-align: center; }
+        .protection .container .conseil__item--position2, .symptômes .container .conseil__item--position2, .transmission .container .conseil__item--position2, .recommandation .container .conseil__item--position2 {
+          position: relative;
+          top: -15px; }
+        .protection .container .conseil__item--position1, .symptômes .container .conseil__item--position1, .transmission .container .conseil__item--position1, .recommandation .container .conseil__item--position1 {
+          position: relative;
+          top: 15px; }
 
 .info {
   background-color: #D0E5F0;
@@ -115,59 +124,61 @@ header {
   margin: auto; }
   .symptômes .container .groupe {
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    height: 250px; }
     .symptômes .container .groupe__item {
       margin: auto;
-      width: 40%; }
+      width: 25%; }
       .symptômes .container .groupe__item p {
         font-size: larger;
         font-weight: 700;
-        text-align: center;
-        height: 150px;
-        width: 60%;
-        margin: auto;
-        padding-top: 20px; }
+        text-align: center; }
+      .symptômes .container .groupe__item--position1 {
+        position: relative;
+        top: 35px; }
+      .symptômes .container .groupe__item--position2 {
+        position: relative;
+        top: -5px; }
 
 .transmission .container {
   width: 50%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   margin: auto; }
   .transmission .container__item {
-    width: 50%;
+    width: 30%;
     margin: auto; }
-    .transmission .container__item .gout {
+    .transmission .container__item .img {
       position: relative;
-      top: -20px;
-      right: 100px; }
+      left: 30px; }
+      .transmission .container__item .img .gout {
+        position: relative;
+        top: -20px;
+        right: 100px; }
     .transmission .container__item p {
-      width: 65%;
-      height: 80px;
-      margin: auto;
-      font-size: medium;
+      font-size: large;
       font-weight: 700;
       color: #1A519E;
-      padding: 10px 0; }
+      text-align: center; }
 
 .recommandation {
-  background-color: #1078AD;
-  padding: 20px; }
+  background-color: #1078AD; }
   .recommandation h3 {
     color: #D0E5F0; }
   .recommandation .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 20px; }
+    justify-content: space-between; }
     .recommandation .container .text {
+      font-size: larger;
+      font-weight: 600;
       color: #FFFFFF;
-      font-size: large;
-      font-weight: bold;
       text-align: left; }
       .recommandation .container .text span {
         color: #000000; }
     .recommandation .container .appel {
+      position: relative;
+      left: -50px;
       width: 20%;
       text-align: center; }
       .recommandation .container .appel h3 {
@@ -186,31 +197,16 @@ header {
         font-weight: 600; }
 
 .test {
-  height: 220px;
   background-color: #96C5DC;
   text-align: center;
   color: #1078AD;
   font-size: larger;
   font-weight: 700;
+  line-height: 1.5;
   display: flex;
-  flex-direction: column;
-  /*img{
-        width: 3%;
-        margin: 5px auto;
-    }
-    button{
-        width: 600px;
-        height: 40px;
-        margin: 5px auto;
-        border: 2px solid $color3;
-        border-radius: 5px;
-        background-color: $color3;
-        color: $color4;
-        font-size: larger;
-        font-weight: 700;
-    }*/ }
+  flex-direction: column; }
   .test__item {
-    margin: 5px auto; }
+    margin: 10px auto; }
     .test__item--btn {
       height: 45px;
       width: 650px;
@@ -224,21 +220,21 @@ header {
 footer .about {
   text-align: center;
   padding: 20px; }
-  footer .about .details {
+  footer .about .container {
     padding: 10px;
     display: flex;
     flex-direction: row; }
-    footer .about .details .menu {
+    footer .about .container .menu {
       width: 20%;
       display: flex;
       flex-direction: column; }
-      footer .about .details .menu__item {
+      footer .about .container .menu__item {
         font-size: large;
         font-weight: 700;
         margin: 10px 0;
         text-decoration: none;
         color: #1078AD; }
-        footer .about .details .menu__item--btn {
+        footer .about .container .menu__item--btn {
           width: 100px;
           height: 40px;
           margin: 0 auto;
@@ -246,19 +242,19 @@ footer .about {
           border: 1px solid #1A519E;
           border-radius: 10px;
           background-color: transparent; }
-        footer .about .details .menu__item--active {
+        footer .about .container .menu__item--active {
           color: #000000; }
-    footer .about .details .contact {
+    footer .about .container .contact {
       width: 30%;
       color: #1078AD; }
-      footer .about .details .contact p {
+      footer .about .container .contact p {
         font-size: large;
         font-weight: 700;
         color: #000000;
         margin: 20px 0; }
-        footer .about .details .contact p span {
+        footer .about .container .contact p span {
           color: #369D53; }
-    footer .about .details .discription {
+    footer .about .container .discription {
       width: 40%;
       color: #7F7F7F;
       text-align: left;
@@ -268,18 +264,13 @@ footer .about {
 footer .barre {
   height: 30px;
   background-color: #1078AD;
-  border-radius: 10px 10px 0 0;
-  padding: -30px; }
+  border-radius: 10px 10px 0 0; }
 
-.hero {
-  display: flex;
-  flex-direction: row;
-  padding: 20px 20px 60px 20px; }
-  .hero .team {
-    width: 50%; }
-  .hero .test {
-    width: 50%;
-    background-color: transparent; }
-    .hero .test p {
-      color: #7F7F7F;
-      padding: 0 100px; }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: Cairo;
+  font-size: 1.5em; }

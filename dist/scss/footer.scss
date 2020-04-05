@@ -2,7 +2,7 @@ footer{
     .about{
         text-align: center;
         padding: 20px;
-        .details{
+        .container{
             padding: 10px;
             display: flex;
             flex-direction: row;
@@ -29,6 +29,7 @@ footer{
                         color:$color1;
                     }
                 }
+                
             }
             .contact{
                 width: 30%;
@@ -62,6 +63,5 @@ footer{
         height: 30px;
         background-color: $color3;
         border-radius: 10px 10px 0 0;
-        padding: -30px;
     }
 }

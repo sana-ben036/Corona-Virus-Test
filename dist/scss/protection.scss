@@ -1,40 +1,49 @@
- 
-.conseil{
+
+.protection{
     text-align: center;
     line-height: 1.5;
-    padding: 10px;
+    padding: 20px 0;
     h3{ 
         color: $color3;
-        font-weight: 700;
         font-size: larger;
-        padding: 20px;    
+        font-weight: 700;
+        padding: 20px;   
     }
     .container{
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding: 20px;
-        .adv{
-            //display: inline-block;
-            width: 30%;
-            height: 650px;
-            align-content: center;
-            justify-content: space-around;
-            color: $color2;  
-            font-size: medium; 
-            font-weight: 700;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+        .conseil{
+            display: flex;
+            flex-direction: row;
+            height: 250px;
+            
             &__item{
-                width: 50%;
-                height: 200px;
+                width: 20%;
                 margin: auto;
-                text-align: center;
-                img{
-                    width: 45%;
+                align-items: center;
+                &--width{
+                    width: 35%;
                 }
-                .hand{
-                    width: 62%;
-                    margin-top: 25px;
+                
+                p{
+                    color: $color2;  
+                    font-size: large; 
+                    font-weight: 700;
+                    text-align: center;
                 }
+                &--position2{
+                    position: relative;
+                    top: -15px;
+                }
+                &--position1{
+                    position: relative;
+                    top: 15px;
+
+
+                }
+    
                 
             }
         }

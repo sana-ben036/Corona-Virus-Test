@@ -1,6 +1,6 @@
 .symptômes{
     
-    @extend .conseil;
+    @extend .protection;
     .container{
         display: flex;
         flex-direction: column;
@@ -9,17 +9,23 @@
         .groupe{            
             display: flex;
             flex-direction: row;
+            height: 250px;
             &__item{
                 margin: auto;
-                width: 40%;
+                width: 25%;
                 p{
                     font-size: larger;
                     font-weight: 700;
                     text-align: center;
-                    height:150px ;
-                    width: 60%;
-                    margin: auto;
-                    padding-top: 20px;
+                    
+                }
+                &--position1{
+                    position: relative;
+                    top: 35px;
+                }
+                &--position2{
+                    position: relative;
+                    top: -5px;
                 }
                 
                 

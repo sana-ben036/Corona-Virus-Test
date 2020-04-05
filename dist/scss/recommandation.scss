@@ -1,26 +1,26 @@
 .recommandation{
     background-color: $color3;
-    padding: 20px;
-    h3{
-        @extend .conseil;
-        color:$bgcolor1;
+    @extend .protection;
 
+    h3{
+        color:$bgcolor1;
     }
     .container{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 20px;
         .text{
+            font-size: larger;
+            font-weight: 600;
             color: $color4;
-            font-size: large;
-            font-weight: bold;
             text-align: left;
             span{
                 color: $color1;
             }
         }
         .appel{
+            position: relative;
+            left: -50px;
             width: 20%;
             text-align: center;
             h3{
