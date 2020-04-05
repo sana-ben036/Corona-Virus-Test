@@ -1,25 +1,28 @@
 .symptômes{
+    
     @extend .conseil;
     .container{
         display: flex;
-        flex-direction: row;
-        justify-content: center;
+        flex-direction: column;
         width: 50%;
         margin: auto;
-        .groupe{
-            display: inline-block;
-            margin: auto;
-
-
+        .groupe{            
+            display: flex;
+            flex-direction: row;
             &__item{
-                display: block;
-                flex-direction: column;
                 margin: auto;
-                //height: 50%;
+                width: 40%;
                 p{
-                    font-size: medium;
+                    font-size: larger;
                     font-weight: 700;
+                    text-align: center;
+                    height:150px ;
+                    width: 60%;
+                    margin: auto;
+                    padding-top: 20px;
                 }
+                
+                
                
             }       
         }

@@ -8,37 +8,41 @@ body {
   font-family: Cairo;
   font-size: 1.5em; }
 
-header nav {
-  height: 90px;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 5px 8px;
-  background-image: url("../Design/Assets/png/Merged bar-1.png"); }
-  header nav .menu {
-    margin: auto 0; }
-    header nav .menu__item {
-      margin: auto 15px;
-      font-size: large;
-      font-weight: 700;
-      text-decoration: none;
-      color: #1A519E; }
-      header nav .menu__item--btn {
-        width: 100px;
-        height: 40px;
-        border: 1px solid #1A519E;
-        border-radius: 10px;
-        background-color: transparent; }
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0; }
+  header nav {
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #D0E5F0;
+    padding: 5px 8px;
+    background-image: url("../Design/Assets/png/Merged bar-1.png"); }
+    header nav .menu {
+      margin: auto 0; }
+      header nav .menu__item {
+        margin: auto 15px;
+        font-size: large;
+        font-weight: 700;
+        text-decoration: none;
+        color: #1A519E; }
+        header nav .menu__item--btn {
+          width: 100px;
+          height: 40px;
+          border: 1px solid #1A519E;
+          border-radius: 10px;
+          background-color: transparent; }
 
-header .note {
+.notification {
   height: 120px;
   text-align: center;
   background-color: #F4CF1B; }
-  header .note h3 {
+  .notification h3 {
     font-size: large;
     color: #000000; }
-  header .note p {
+  .notification p {
     font-size: medium;
     font-weight: 700;
     color: #1078AD; }
@@ -128,14 +132,13 @@ header .note {
   justify-content: space-around;
   margin: auto; }
   .transmission .container__item {
-    position: relative;
     width: 50%;
     margin: auto;
-    display: inline-block; }
-    .transmission .container__item .gout {
-      position: absolute;
-      top: 65px;
-      left: 150px; }
+    /*.gout{
+                position: absolute;
+                top: 65px ;
+                left: 150px;
+            }*/ }
     .transmission .container__item p {
       width: 65%;
       height: 80px;
@@ -181,25 +184,38 @@ header .note {
         font-weight: 600; }
 
 .test {
+  height: 200px;
   background-color: #96C5DC;
   text-align: center;
   color: #1078AD;
   font-size: large;
   display: flex;
-  flex-direction: column; }
-  .test img {
-    width: 3%;
-    margin: 5px auto; }
-  .test button {
-    width: 20%;
-    height: 40px;
-    margin: 5px auto;
-    border: 2px solid #1078AD;
-    border-radius: 5px;
-    background-color: #1078AD;
-    color: #FFFFFF;
-    font-size: larger;
-    font-weight: 700; }
+  flex-direction: column;
+  /*img{
+        width: 3%;
+        margin: 5px auto;
+    }
+    button{
+        width: 600px;
+        height: 40px;
+        margin: 5px auto;
+        border: 2px solid $color3;
+        border-radius: 5px;
+        background-color: $color3;
+        color: $color4;
+        font-size: larger;
+        font-weight: 700;
+    }*/ }
+  .test__item {
+    margin: 10px auto; }
+    .test__item--btn {
+      height: 40px;
+      border: 2px solid #1078AD;
+      border-radius: 5px;
+      background-color: #1078AD;
+      color: #FFFFFF;
+      font-size: larger;
+      font-weight: 700; }
 
 footer .about {
   text-align: center;
@@ -244,13 +260,25 @@ footer .about {
       text-align: left;
       font-size: large;
       margin: auto; }
+  footer .about .barre {
+    height: 50px;
+    width: 100%;
+    background-color: #1078AD;
+    border-radius: 10px 10px 0 0;
+    padding: -30px; }
 
 .hero {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  padding: 20px; }
   .hero .team {
-    width: 40%; }
-  .hero .test {
     width: 50%; }
+  .hero .test {
+    width: 50%;
+    font-size: larger;
+    font-weight: 600;
+    background-color: transparent; }
+    .hero .test p {
+      color: #7F7F7F; }
 
 /*# sourceMappingURL=prefix.css.map */

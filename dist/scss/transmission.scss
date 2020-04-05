@@ -7,14 +7,12 @@
         justify-content: space-around;
         margin: auto;
         &__item{
-            position: relative;
             width: 50%;
             margin: auto;
-            display: inline-block;
             .gout{
-                position: absolute;
-                top: 65px ;
-                left: 150px;
+                position: relative;
+                top: -20px;
+                right: 100px;
             }
             p{
                 width: 65%;  
@@ -22,7 +20,8 @@
                 margin: auto;
                 font-size: medium;
                 font-weight: 700;
-                color: $color2;  
+                color: $color2; 
+                padding: 10px 0; 
                 
             }
             

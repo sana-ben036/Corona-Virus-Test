@@ -1,11 +1,29 @@
 .test{
+    height: 220px;
     background-color: $bgcolor3;
     text-align: center;
     color: $color3;
-    font-size: large;
+    font-size: larger;
+    font-weight: 700;
     display: flex;
     flex-direction: column;
-    img{
+    &__item{
+        margin: 5px auto;        
+        &--btn{
+            height: 45px;
+            width: 650px;
+            font-size: larger;
+            font-weight: 700;
+            border: 2px solid $color3;
+            border-radius: 5px;
+            background-color: $color3;
+            color: $color4;
+            
+        
+
+        }
+    }
+    /*img{
         width: 3%;
         margin: 5px auto;
     }
@@ -19,5 +37,5 @@
         color: $color4;
         font-size: larger;
         font-weight: 700;
-    }
+    }*/
 }
