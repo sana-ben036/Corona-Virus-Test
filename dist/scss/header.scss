@@ -1,38 +1,31 @@
 header {
-    position: sticky;
-    top: 0;
+    @include position (sticky,0,0,0);
     z-index: 2;
 
     nav {
+        @include flex (flex,row);
         height: 90px;
-        display: flex;
-        flex-direction: row;
         justify-content: space-between;
         background-color: $bgcolor1;
         padding: 5px 8px;
         background-image: url('../Design/Assets/png/Merged\ bar-1.png');
 
         .menu {
-            margin: auto 0;
-
-            &__item {
-                margin: auto 15px;
-                font-size: large;
-                font-weight: 700;
-                text-decoration: none;
-                color: $color1;
-                &--active{
-                    color: $color2;
-                }
-
-                &--btn {
-                    width: 100px;
-                    height: 40px;
-                    border: 1px solid $color2;
-                    border-radius: 10px;
-                    background-color: transparent;
+            @include flex (flex,row);
+            margin: auto 0 ;
+                &__item{
+                    @include menu__item;
+                    margin: auto 30px;
+                    &--btn{
+                        @include menu__btn;
+                        margin: 0 20px;
+                    }
+                    &--active{
+                        color: $color2;
+                    }
                 }
             }
-        }
+                
+            
     }
 }

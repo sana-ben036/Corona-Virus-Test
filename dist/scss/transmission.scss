@@ -1,20 +1,21 @@
 .transmission{
-    @extend .protection;
+    @extend .section-style;
+
+    h3{
+        @extend .h3-style;
+
+    }
     .container{
+        @include flex (flex,row);
         width: 50%;
-        display: flex;
-        flex-direction: row;
         margin: auto;
         &__item{
             width: 30%;
             margin: auto;
             .img{
-                position: relative;
-                left: 30px;
+                @include position (relative,0,30px,0);
                 .gout{
-                    position: relative;
-                    top: -20px;
-                    right: 100px;
+                    @include position (relative,-20px,-100px,0);   
                 }    
             }
             

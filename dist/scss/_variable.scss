@@ -9,3 +9,67 @@ $bgcolor2:#F4CF1B;
 $bgcolor3:#96C5DC;
 $primaryfont: Cairo;
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: $primaryfont;
+    font-size: 1.5em;
+
+
+}
+
+@mixin flex ($p1, $p2) {
+    display:$p1;
+    flex-direction: $p2;
+    
+}
+@mixin menu__item {
+    font-size: large;
+    font-weight: 700;
+    text-decoration: none;
+    color: $color1; 
+    
+}
+@mixin menu__btn {
+    width: 100px;
+    height: 40px;
+    margin: 20px auto;
+    border: 1px solid $color2;
+    border-radius: 10px;
+    background-color: transparent;
+    
+}
+@mixin position ($p,$t,$l,$r){
+    position:$p;
+    top:$t;
+    left:$l;
+    right: $r;
+}
+
+
+.section-style{
+    text-align: center;
+    padding: 20px 0;
+    line-height: 1.5;
+}
+.h3-style{
+    color: $color3;
+    font-size: larger;
+    font-weight: 700;
+    padding: 20px;
+
+}
+.btn-style{
+    
+    
+    font-weight: 700;
+    border: 1px solid $color3;
+    border-radius: 5px;
+    background-color: $color3;
+    color: $color4;
+}

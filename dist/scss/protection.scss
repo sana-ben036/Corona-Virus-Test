@@ -1,24 +1,18 @@
 
 .protection{
-    text-align: center;
-    line-height: 1.5;
-    padding: 20px 0;
-    h3{ 
-        color: $color3;
-        font-size: larger;
-        font-weight: 700;
-        padding: 20px;   
+    @extend .section-style;
+
+    h3{
+        @extend .h3-style;
+
     }
     .container{
-        display: flex;
-        flex-direction: column;
+        @include flex (flex, column);
         width: 90%;
         margin: auto;
         .conseil{
-            display: flex;
-            flex-direction: row;
+            @include flex (flex, row);
             height: 250px;
-            
             &__item{
                 width: 20%;
                 margin: auto;
@@ -34,12 +28,12 @@
                     text-align: center;
                 }
                 &--position2{
-                    position: relative;
-                    top: -15px;
+                    @include position (relative,-15px,0,0);
+                    
                 }
                 &--position1{
-                    position: relative;
-                    top: 15px;
+                    @include position (relative,15px,0,0);
+                    
 
 
                 }

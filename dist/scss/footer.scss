@@ -4,32 +4,20 @@ footer{
         padding: 20px;
         .container{
             padding: 10px;
-            display: flex;
-            flex-direction: row;
+            @include flex (flex,row);
             .menu{
-                width:20% ;
-                display: flex;
-                flex-direction: column;
+                width: 20%;
+                @include flex (flex,column);
                 &__item{
-                    font-size: large;
-                    font-weight: 700;
+                    @include menu__item;
                     margin: 10px 0;
-                    text-decoration: none;
-                    color: $color3;  
                     &--btn{
-                        width: 100px;
-                        height: 40px;
-                        margin: 0 auto;
-                        margin-top: 10px;
-                        border: 1px solid $color2;
-                        border-radius: 10px;
-                        background-color: transparent;
+                        @include menu__btn;
                     }
                     &--active{
-                        color:$color1;
+                        color: $color2;
                     }
                 }
-                
             }
             .contact{
                 width: 30%;

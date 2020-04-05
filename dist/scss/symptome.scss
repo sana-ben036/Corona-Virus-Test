@@ -1,14 +1,18 @@
 .symptômes{
+    @extend .section-style;
+
+    h3{
+        @extend .h3-style;
+
+    }
     
-    @extend .protection;
+    
     .container{
-        display: flex;
-        flex-direction: column;
+        @include flex (flex, column);
         width: 50%;
         margin: auto;
         .groupe{            
-            display: flex;
-            flex-direction: row;
+            @include flex (flex, row);
             height: 250px;
             &__item{
                 margin: auto;
@@ -17,15 +21,16 @@
                     font-size: larger;
                     font-weight: 700;
                     text-align: center;
+                    line-height: 1;
                     
                 }
                 &--position1{
-                    position: relative;
-                    top: 35px;
+                    @include position (relative,35px,0,0);
+                    
                 }
                 &--position2{
-                    position: relative;
-                    top: -5px;
+                    @include position (relative,-5px,0,0);
+                    
                 }
                 
                 

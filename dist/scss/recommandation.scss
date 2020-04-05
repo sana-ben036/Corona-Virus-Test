@@ -1,13 +1,14 @@
 .recommandation{
+    @extend .section-style;
     background-color: $color3;
-    @extend .protection;
+    padding: 0 40px 10px 30px;
 
     h3{
-        color:$bgcolor1;
+        @extend .h3-style;
+        color:$bgcolor1; 
     }
     .container{
-        display: flex;
-        flex-direction: row;
+        @include flex (flex,row);
         justify-content: space-between;
         .text{
             font-size: larger;
@@ -19,8 +20,7 @@
             }
         }
         .appel{
-            position: relative;
-            left: -50px;
+            @include position (relative,0,-50px,0);
             width: 20%;
             text-align: center;
             h3{
