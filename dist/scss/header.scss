@@ -8,7 +8,7 @@ header {
         justify-content: space-between;
         background-color: $bgcolor1;
         padding: 5px 8px;
-        background-image: url('../Design/Assets/png/Merged\ bar-1.png');
+        background-image: url('../Design/Assets/png/bgr.png');
 
         .menu {
             @include flex (flex,row);
