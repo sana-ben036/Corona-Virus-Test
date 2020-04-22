@@ -20,11 +20,7 @@
             }
             
             p{
-                font-size: large;
-                font-weight: 700;
-                color: $color2; 
-                text-align: center;
-                
+                @include para ($color2,large,700,center,1.5);
             }
             
         }

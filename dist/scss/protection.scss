@@ -22,10 +22,7 @@
                 }
                 
                 p{
-                    color: $color2;  
-                    font-size: large; 
-                    font-weight: 700;
-                    text-align: center;
+                    @include para ($color2,large,700,center,1.5);
                 }
                 &--position2{
                     @include position (relative,-15px,0,0);

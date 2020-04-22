@@ -11,34 +11,33 @@
         @include flex (flex,row);
         justify-content: space-between;
         .text{
-            font-size: larger;
-            font-weight: 600;
-            color: $color4;
-            text-align: left;
+            @include para ($color4,larger,600,left,1.5);
             span{
                 color: $color1;
             }
         }
         .appel{
             @include position (relative,0,-50px,0);
+            @include flex (flex,column);
+            justify-content: space-between;
             width: 20%;
-            text-align: center;
+            height: 220px;
             h3{
                 color:$bgcolor2;
             }
             p{
-                color:$color3;
+                @include para ($color3,larger,700,center,1.5);
                 background-color:$bgcolor2 ;
                 border: 2px solid $bgcolor2;
                 border-radius: 5px;
                 width: 80%;
-                margin: auto;   
+                height: 60px;
+                margin: 0 auto;   
             }
             a:link{
                 text-decoration-color: $bgcolor2;
-                color: $color4;
-                font-size: larger;
-                font-weight: 600;
+                @include para ($color4,larger,600,center,1);
+                
             }
         }
     }   

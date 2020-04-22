@@ -1,10 +1,6 @@
 .test{
     background-color: $bgcolor3;
-    text-align: center;
-    color: $color3;
-    font-size: larger;
-    font-weight: 700;
-    line-height: 1.5;
+    @include para ($color3,larger,700,center,1.5);
     @include flex (flex, column);
     &__item{
         margin: 10px auto;        

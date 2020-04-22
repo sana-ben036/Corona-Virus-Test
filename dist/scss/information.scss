@@ -6,10 +6,9 @@
 
     &__btn {
         @extend .btn-style;
-        width: 30%;
+        width: 20%;
         margin: auto;
         height: 70px;
-        width: 20%;
         font-size: large;
         
     }
@@ -24,9 +23,8 @@
         }
 
         p {
-            color: $color2;
-            font-size: larger;
-            font-weight: 600;
+            @include para ($color2,larger,600,center,1.5);
+            
         }
 
     }

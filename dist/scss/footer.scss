@@ -23,29 +23,19 @@ footer{
                 width: 30%;
                 color: $color3;
                 p{
-                    font-size: large;
-                    font-weight: 700;
-                    color: $color1;
+                    @include para ($color1,large,700,center,1.5);
                     margin: 20px 0;
                     span{
                         color: $color5;
                     }
-
                 }
-                
-
             }
             .discription{
                 width: 40%;
-                color:$color6;
-                text-align: left;
-                font-size: large;
                 margin: auto;
-
-            }
-            
-        }
-        
+                @include para ($color6,large,600,left,2);
+            }            
+        }        
     }
     .barre{
         height: 30px;

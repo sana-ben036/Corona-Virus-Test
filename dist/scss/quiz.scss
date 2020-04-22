@@ -1,0 +1,31 @@
+.quiz{
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+    @include flex (flex, column);
+    h3{
+        @extend .h3-style;  
+    }
+    .preambule{
+        @include flex (flex, column);
+        text-align: center;
+        background-color: $bgcolor3;
+        color: $color1;
+        margin: 20px auto;
+        padding: 10px 40px;
+        border-radius: 5px;
+        p{
+            font-size: large;
+            font-weight: bold;
+        }
+        hr{
+            border: 1px solid $bgcolor2;
+            width: 20%;
+            margin: 20px auto;
+        }
+    }
+
+
+}
+
+

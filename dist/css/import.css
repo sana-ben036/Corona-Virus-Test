@@ -13,7 +13,7 @@ body {
   padding: 20px 0;
   line-height: 1.5; }
 
-.h3-style, .protection h3, .symptômes h3, .transmission h3, .recommandation h3 {
+.h3-style, .protection h3, .symptômes h3, .transmission h3, .recommandation h3, .quiz h3 {
   color: #1078AD;
   font-size: larger;
   font-weight: 700;
@@ -39,7 +39,7 @@ header {
     justify-content: space-between;
     background-color: #D0E5F0;
     padding: 5px 8px;
-    background-image: url("../Design/Assets/png/Merged bar-1.png"); }
+    background-image: url("../img/Assets/png/bgr.png"); }
     header nav .menu {
       display: flex;
       flex-direction: row;
@@ -63,15 +63,16 @@ header {
 
 .notification {
   height: 120px;
-  text-align: center;
   background-color: #F4CF1B; }
   .notification h3 {
     font-size: large;
-    color: #000000; }
+    text-align: center; }
   .notification p {
+    color: #1078AD;
     font-size: medium;
     font-weight: 700;
-    color: #1078AD; }
+    text-align: center;
+    line-height: 1.5; }
 
 .hero {
   display: flex;
@@ -105,7 +106,8 @@ header {
         color: #1A519E;
         font-size: large;
         font-weight: 700;
-        text-align: center; }
+        text-align: center;
+        line-height: 1.5; }
       .protection .container .conseil__item--position2 {
         position: relative;
         top: -15px;
@@ -124,10 +126,9 @@ header {
   justify-content: space-around;
   padding: 30px; }
   .info__btn {
-    width: 30%;
+    width: 20%;
     margin: auto;
     height: 70px;
-    width: 20%;
     font-size: large; }
   .info__text {
     width: 30%;
@@ -138,7 +139,9 @@ header {
     .info__text p {
       color: #1A519E;
       font-size: larger;
-      font-weight: 600; }
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.5; }
 
 .symptômes .container {
   display: flex;
@@ -153,8 +156,9 @@ header {
       margin: auto;
       width: 25%; }
       .symptômes .container .groupe__item p {
+        color: #000000;
         font-size: larger;
-        font-weight: 700;
+        font-weight: 600;
         text-align: center;
         line-height: 1; }
       .symptômes .container .groupe__item--position1 {
@@ -187,10 +191,11 @@ header {
         left: -100px;
         right: 0; }
     .transmission .container__item p {
+      color: #1A519E;
       font-size: large;
       font-weight: 700;
-      color: #1A519E;
-      text-align: center; }
+      text-align: center;
+      line-height: 1.5; }
 
 .recommandation {
   background-color: #1078AD;
@@ -202,10 +207,11 @@ header {
     flex-direction: row;
     justify-content: space-between; }
     .recommandation .container .text {
+      color: #FFFFFF;
       font-size: larger;
       font-weight: 600;
-      color: #FFFFFF;
-      text-align: left; }
+      text-align: left;
+      line-height: 1.5; }
       .recommandation .container .text span {
         color: #000000; }
     .recommandation .container .appel {
@@ -213,29 +219,39 @@ header {
       top: 0;
       left: -50px;
       right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       width: 20%;
-      text-align: center; }
+      height: 220px; }
       .recommandation .container .appel h3 {
         color: #F4CF1B; }
       .recommandation .container .appel p {
         color: #1078AD;
+        font-size: larger;
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.5;
         background-color: #F4CF1B;
         border: 2px solid #F4CF1B;
         border-radius: 5px;
         width: 80%;
-        margin: auto; }
+        height: 60px;
+        margin: 0 auto; }
       .recommandation .container .appel a:link {
         text-decoration-color: #F4CF1B;
         color: #FFFFFF;
         font-size: larger;
-        font-weight: 600; }
+        font-weight: 600;
+        text-align: center;
+        line-height: 1; }
 
 .test {
   background-color: #96C5DC;
-  text-align: center;
   color: #1078AD;
   font-size: larger;
   font-weight: 700;
+  text-align: center;
   line-height: 1.5;
   display: flex;
   flex-direction: column; }
@@ -276,20 +292,47 @@ footer .about {
       width: 30%;
       color: #1078AD; }
       footer .about .container .contact p {
+        color: #000000;
         font-size: large;
         font-weight: 700;
-        color: #000000;
+        text-align: center;
+        line-height: 1.5;
         margin: 20px 0; }
         footer .about .container .contact p span {
           color: #369D53; }
     footer .about .container .discription {
       width: 40%;
+      margin: auto;
       color: #7F7F7F;
-      text-align: left;
       font-size: large;
-      margin: auto; }
+      font-weight: 600;
+      text-align: left;
+      line-height: 2; }
 
 footer .barre {
   height: 30px;
   background-color: #1078AD;
   border-radius: 10px 10px 0 0; }
+
+.quiz {
+  width: 80%;
+  margin: 30px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column; }
+  .quiz .preambule {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #96C5DC;
+    color: #000000;
+    margin: 20px auto;
+    padding: 10px 40px;
+    border-radius: 5px; }
+    .quiz .preambule p {
+      font-size: large;
+      font-weight: bold; }
+    .quiz .preambule hr {
+      border: 1px solid #F4CF1B;
+      width: 20%;
+      margin: 20px auto; }
