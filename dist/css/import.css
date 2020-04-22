@@ -13,7 +13,7 @@ body {
   padding: 20px 0;
   line-height: 1.5; }
 
-.h3-style, .protection h3, .symptômes h3, .transmission h3, .recommandation h3, .quiz h3 {
+.h3-style, .protection h3, .symptômes h3, .transmission h3, .recommandation h3, .section h3 {
   color: #1078AD;
   font-size: larger;
   font-weight: 700;
@@ -314,13 +314,23 @@ footer .barre {
   background-color: #1078AD;
   border-radius: 10px 10px 0 0; }
 
-.quiz {
-  width: 80%;
+.section {
+  width: 70%;
   margin: 30px auto;
   text-align: center;
   display: flex;
   flex-direction: column; }
-  .quiz .preambule {
+  .section .stepper {
+    width: 50%;
+    margin: 20px auto; }
+    .section .stepper ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
+  .section .question {
+    border: 1px solid #7F7F7F;
+    height: 400px; }
+  .section .preambule {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -329,10 +339,10 @@ footer .barre {
     margin: 20px auto;
     padding: 10px 40px;
     border-radius: 5px; }
-    .quiz .preambule p {
+    .section .preambule p {
       font-size: large;
       font-weight: bold; }
-    .quiz .preambule hr {
+    .section .preambule hr {
       border: 1px solid #F4CF1B;
       width: 20%;
       margin: 20px auto; }

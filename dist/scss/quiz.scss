@@ -1,10 +1,24 @@
-.quiz{
-    width: 80%;
+.section{
+    width: 70%;
     margin: 30px auto;
     text-align: center;
     @include flex (flex, column);
     h3{
         @extend .h3-style;  
+    }
+    .stepper{
+        width: 50%;
+        margin: 20px auto;
+        ul{
+           @include flex (flex,row);
+           justify-content: space-between;       
+        }
+        
+    }
+    .question{
+        border: 1px solid $color6;
+        height: 400px;
+
     }
     .preambule{
         @include flex (flex, column);
