@@ -1,45 +1,81 @@
-.section{
+.section {
     width: 70%;
-    margin: 30px auto;
+    margin: 20px auto;
     text-align: center;
     @include flex (flex, column);
-    h3{
-        @extend .h3-style;  
+    h3 {
+        @extend .h3-style;
     }
-    .stepper{
-        width: 50%;
-        margin: 20px auto;
-        ul{
-           @include flex (flex,row);
-           justify-content: space-between;       
+    .stepper {
+        width: 80%;
+        margin: 0 auto 50px;
+        .list {
+            @include flex (flex,row);
+            &__item {
+                list-style-type: none;
+                @include para ($color3,large,700,center,1);
+                width: 33.33%;
+                position: relative;
+                margin: auto;
+                &:before {
+                    @include cercl (" ",20px,20px,1px solid transparent,20px,$color3);
+                    display: block;
+                    margin: 0 auto 10px; 
+                }
+            }
+        }
+        .big-cercl{
+            display: block;
+            @include cercl (" ",40px,40px,1px solid transparent,40px,$bgcolor3);
+            @include position (relative,-9px,-696px,0);
+            .small-cercl{
+                @include cercl (" ",22px,22px,1px solid transparent,22px,$bgcolor2);
+                @include position (relative,8px,7px,0);   
+            }
+        }
+
+    }
+    
+    #preambule {
+        @include flex (flex, column);
+        text-align: center;
+        .text{
+            background-color: $bgcolor3;
+            color: $color1;
+            margin: 20px auto;
+            padding: 10px 40px;
+            border-radius: 5px;
+            p {
+                font-size: large;
+                font-weight: bold;
+            }
+            hr {
+                border: 1px solid $bgcolor2;
+                width: 20%;
+                margin: 20px auto;
+            }
         }
         
     }
-    .question{
+    #questionnaire {
         border: 1px solid $color6;
-        height: 400px;
+        height: 535px;
+        .btn{
+            @include flex (flex,row);
+            width: 80%;
+            margin:10px auto;
+            justify-content: space-between;
+            button{
+                @extend .btn-style;
+                width: 100px;
+                height: 50px;
+                font-size: large;
+            }
+        }
 
     }
-    .preambule{
-        @include flex (flex, column);
-        text-align: center;
-        background-color: $bgcolor3;
-        color: $color1;
-        margin: 20px auto;
-        padding: 10px 40px;
-        border-radius: 5px;
-        p{
-            font-size: large;
-            font-weight: bold;
-        }
-        hr{
-            border: 1px solid $bgcolor2;
-            width: 20%;
-            margin: 20px auto;
-        }
+    #resultat{
+        @extend #preambule;
     }
-
 
 }
-
-

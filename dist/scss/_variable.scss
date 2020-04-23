@@ -56,6 +56,15 @@ body {
     text-align: $p;
     line-height: $i;
 }
+@mixin cercl ($c,$w,$h,$b,$r,$bg){
+    content:$c;
+    width:$w;
+    height:$h;
+    border:$b;
+    border-radius:$r;
+    background-color: $bg;
+    
+}
 
 
 .section-style{

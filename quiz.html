@@ -25,40 +25,80 @@
 
         <!----------------------------------quiz----------------------------------------------------------->
         <div class="section">
+            <!--stepper-->
             <div class="stepper"> 
-                <ul>
-                    <li>step1</li>
-                    <li>step2</li>
-                    <li>step3</li>
+                <ul class="list">
+                    <li class="list__item list__item--active">Information</li>
+                    <li class="list__item">Questionnaire</li>
+                    <li class="list__item">Résultats</li>
+                    <div class="big-cercl"><div class="small-cercl"></div></div>
                 </ul>
-
-            </div>
-            <div class="question">
-
             </div>
             
-            <div class="preambule">
-                <h3>Préambule</h3>
-                <p>
-                    L’application est fournie à titre gratuit, en l’état, uniquement à des fins
-                    d’information pour contribuer à fluidifier la prise en charge des personnes par
-                    les services d’urgences pendant l’épidémie de Coronavirus COVID-19.
-                    L’exhaustivité, l’exactitude, le caractère à jour des informations et contenus
-                    mis à disposition dans cette application, ou leur adéquation à des finalités
-                    particulières, ne sont pas garantis.</p>
-                <hr>
-                <p>
-                    L’utilisation de l’application et de son contenu ne remplace en aucun cas le
-                    conseil nécessaire donné par votre médecin ou votre pharmacien ou tout autre
-                    professionnel de santé compétent dans chaque cas particulier. Tout examen ou
-                    décision de l’utilisateur doit être réalisé ou prise de manière autonome sur la
-                    base de l’information scientifique et clinique pertinente, de la notice
-                    officielle du produit concerné le cas échéant et en cas de doute, en consultant
-                    un médecin compétent.
-                </p>
+            <!--preambule-->
+            <div id="preambule">
+                <div class="text">
+                    <h3>Préambule</h3>
+                    <p>
+                        L’application est fournie à titre gratuit, en l’état, uniquement à des fins
+                        d’information pour contribuer à fluidifier la prise en charge des personnes par
+                        les services d’urgences pendant l’épidémie de Coronavirus COVID-19.
+                        L’exhaustivité, l’exactitude, le caractère à jour des informations et contenus
+                        mis à disposition dans cette application, ou leur adéquation à des finalités
+                        particulières, ne sont pas garantis.</p>
+                    <hr>
+                    <p>
+                        L’utilisation de l’application et de son contenu ne remplace en aucun cas le
+                        conseil nécessaire donné par votre médecin ou votre pharmacien ou tout autre
+                        professionnel de santé compétent dans chaque cas particulier. Tout examen ou
+                        décision de l’utilisateur doit être réalisé ou prise de manière autonome sur la
+                        base de l’information scientifique et clinique pertinente, de la notice
+                        officielle du produit concerné le cas échéant et en cas de doute, en consultant
+                        un médecin compétent.
+                            
+                    </p>
+                </div>
+                <a href="#questionnaire">
+                    <button class="test__item test__item--btn" type="button">
+                        Demarer le test</button>
+                </a>
             </div>
-            <a href="quiz.html"><button class="test__item test__item--btn" type="button"> Demarer le test</button></a>
 
+            <!--questionnaire-->
+            <div id="questionnaire">
+                <div class="progressbar">
+                    <div></div>
+                </div>
+                <div class="question"></div>
+                <div class="reponse"></div>
+                <div class="btn">
+                    <button type="button">Précédent</button>
+                    <button type="button">Suivant</button>
+                </div>
+
+            </div>
+
+            <!--résultats-->
+            <div id="resultat">
+                <div class="text">
+                    <h3>Résultats</h3>
+                    <p>
+                        Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à
+                        contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de
+                        nouveau symptôme pour réévaluer la situation. Pour toute information concernant
+                        le Covid-19, consulter la page Conseils</p>
+                    <hr>
+                    <p>
+                        Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez
+                        votre température deux fois par jour. Rappel des mesures d’hygiène.
+                    </p>
+                </div>
+                <a href="#preambule">
+                    <button class="test__item test__item--btn" type="button">
+                        Redémarer le test</button>
+                </a>
+
+            </div>
         </div>
 
         <!------------------------------recommandation---------------------------------------------------------->
