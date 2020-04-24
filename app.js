@@ -88,3 +88,35 @@ let questions = [
     "option2":"Non",
 }   
 ]
+
+// :::move to next step (information/questionnaire/resultats)
+let preambule = document.getElementById('preambule');
+let questionnaire = document.getElementById('questionnaire');
+let resultat = document.getElementById('resultat');
+let stepper = document.getElementById('big-cercl');
+
+let start= document.getElementById('btn-step1');
+let next= document.getElementById('btn-step2');
+let again = document.getElementById('btn-step3');
+
+start.addEventListener('click',moveStep2);
+next.addEventListener('click',moveStep3);
+again.addEventListener('click',moveStep1);
+
+function moveStep2(){
+    preambule.style.display='none';
+    questionnaire.style.display='block';
+    stepper.style.left= '-426px';
+}
+function moveStep3(){
+    preambule.style.display='none';
+    questionnaire.style.display='none';
+    resultat.style.display='block'
+    stepper.style.left= '-156px';
+}
+function moveStep1(){
+    preambule.style.display='flex';
+    questionnaire.style.display='none';
+    resultat.style.display='none';
+    stepper.style.left= '-696px';
+}

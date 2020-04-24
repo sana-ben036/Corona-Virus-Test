@@ -24,11 +24,12 @@
                 }
             }
         }
-        .big-cercl{
+        #big-cercl{
             display: block;
             @include cercl (" ",40px,40px,1px solid transparent,40px,$bgcolor3);
             @include position (relative,-9px,-696px,0);
-            .small-cercl{
+            left: -696px;
+            #small-cercl{
                 @include cercl (" ",22px,22px,1px solid transparent,22px,$bgcolor2);
                 @include position (relative,8px,7px,0);   
             }
@@ -58,6 +59,7 @@
         
     }
     #questionnaire {
+        display: none;
         border: 1px solid $color6;
         height: 535px;
         .btn{
@@ -75,6 +77,7 @@
 
     }
     #resultat{
+        display: none;
         @extend #preambule;
     }
 

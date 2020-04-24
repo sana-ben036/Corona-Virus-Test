@@ -345,7 +345,7 @@ footer .barre {
           background-color: #1078AD;
           display: block;
           margin: 0 auto 10px; }
-    .section .stepper .big-cercl {
+    .section .stepper #big-cercl {
       display: block;
       content: " ";
       width: 40px;
@@ -356,8 +356,9 @@ footer .barre {
       position: relative;
       top: -9px;
       left: -696px;
-      right: 0; }
-      .section .stepper .big-cercl .small-cercl {
+      right: 0;
+      left: -696px; }
+      .section .stepper #big-cercl #small-cercl {
         content: " ";
         width: 22px;
         height: 22px;
@@ -386,6 +387,7 @@ footer .barre {
         width: 20%;
         margin: 20px auto; }
   .section #questionnaire {
+    display: none;
     border: 1px solid #7F7F7F;
     height: 535px; }
     .section #questionnaire .btn {
@@ -398,3 +400,5 @@ footer .barre {
         width: 100px;
         height: 50px;
         font-size: large; }
+  .section #resultat {
+    display: none; }

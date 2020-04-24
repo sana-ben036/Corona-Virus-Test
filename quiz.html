@@ -28,10 +28,10 @@
             <!--stepper-->
             <div class="stepper"> 
                 <ul class="list">
-                    <li class="list__item list__item--active">Information</li>
+                    <li class="list__item" >Information</li>
                     <li class="list__item">Questionnaire</li>
                     <li class="list__item">Résultats</li>
-                    <div class="big-cercl"><div class="small-cercl"></div></div>
+                    <div id="big-cercl"><div id="small-cercl"></div></div>
                 </ul>
             </div>
             
@@ -59,7 +59,7 @@
                     </p>
                 </div>
                 <a href="#questionnaire">
-                    <button class="test__item test__item--btn" type="button">
+                    <button class="test__item test__item--btn" type="button" id="btn-step1">
                         Demarer le test</button>
                 </a>
             </div>
@@ -72,10 +72,10 @@
                 <div class="question"></div>
                 <div class="reponse"></div>
                 <div class="btn">
-                    <button type="button">Précédent</button>
-                    <button type="button">Suivant</button>
+                    <button type="button" id="btn-last">Précédent</button>
+                    <button type="button"id="btn-next">Suivant</button>
+                    <button type="button" id="btn-step2">Términer</button>
                 </div>
-
             </div>
 
             <!--résultats-->
@@ -94,7 +94,7 @@
                     </p>
                 </div>
                 <a href="#preambule">
-                    <button class="test__item test__item--btn" type="button">
+                    <button class="test__item test__item--btn" type="button" id="btn-step3">
                         Redémarer le test</button>
                 </a>
 
