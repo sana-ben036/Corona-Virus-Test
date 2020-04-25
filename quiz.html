@@ -28,10 +28,9 @@
             <!--stepper-->
             <div class="stepper"> 
                 <ul class="list">
-                    <li class="list__item" >Information</li>
-                    <li class="list__item">Questionnaire</li>
-                    <li class="list__item">Résultats</li>
-                    <div id="big-cercl"><div id="small-cercl"></div></div>
+                    <li class="list__item list__item--active" >Information</li>
+                    <li class="list__item" >Questionnaire</li>
+                    <li class="list__item" >Résultats</li>
                 </ul>
             </div>
             
@@ -66,11 +65,20 @@
 
             <!--questionnaire-->
             <div id="questionnaire">
+
                 <div class="progressbar">
                     <div></div>
                 </div>
-                <div class="question"></div>
-                <div class="reponse"></div>
+                <div class="question">
+                    <p id='q'>question?</p>
+                </div>
+                <div class="reponse">
+                    <input id='opt1' type="radio">1</input>
+                    <input id='opt2' type="radio">2</input>
+                    <input id='opt3' type="radio">3</input>
+                    <input id='opt4' type="radio">4</input>
+                    
+                </div>
                 <div class="btn">
                     <button type="button" id="btn-last">Précédent</button>
                     <button type="button"id="btn-next">Suivant</button>

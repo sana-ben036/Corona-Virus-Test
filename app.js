@@ -1,3 +1,5 @@
+// ::: array of quiz data
+
 let questions = [
     {
     "question":"Pensez-vous avoir ou avoir eu de la fièvre ces 10 derniers jours (frissons, sueurs) ?",
@@ -93,7 +95,7 @@ let questions = [
 let preambule = document.getElementById('preambule');
 let questionnaire = document.getElementById('questionnaire');
 let resultat = document.getElementById('resultat');
-let stepper = document.getElementById('big-cercl');
+let list = document.getElementsByClassName('list__item');
 
 let start= document.getElementById('btn-step1');
 let next= document.getElementById('btn-step2');
@@ -106,17 +108,33 @@ again.addEventListener('click',moveStep1);
 function moveStep2(){
     preambule.style.display='none';
     questionnaire.style.display='block';
-    stepper.style.left= '-426px';
+    list[0].classList.remove('list__item--active');
+    list[1].classList.add('list__item--active');
+    //stepper.classl= '-426px';
+    
 }
 function moveStep3(){
     preambule.style.display='none';
     questionnaire.style.display='none';
     resultat.style.display='block'
-    stepper.style.left= '-156px';
+    list[1].classList.remove('list__item--active');
+    list[2].classList.add('list__item--active');
+    
+    //stepper.style.left= '-156px';
 }
 function moveStep1(){
     preambule.style.display='flex';
     questionnaire.style.display='none';
     resultat.style.display='none';
-    stepper.style.left= '-696px';
+    list[2].classList.remove('list__item--active');
+    list[0].classList.add('list__item--active');
+    
+    //stepper.style.left= '-696px';
 }
+
+// ::: afficher question
+
+//document.getElementById('q').innerHTML= questions[0];
+
+
+
