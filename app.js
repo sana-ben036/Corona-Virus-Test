@@ -128,6 +128,13 @@ function moveStep1(){
     list[0].classList.add('list__item--active');
     
 }
+// ::: progressbar
+
+var count = document.getElementById('count');
+var progress = document.getElementById('progress');
+
+
+
 
 // ::: afficher questions
 
@@ -150,7 +157,9 @@ function loadQuestion (questionIndex){
     para.textContent = q.question;
     opt1.textContent = q.option1;
     opt2.textContent = q.option2;
-
+    count.textContent= (questionIndex + 1) + '/' + totalQuestion;
+    progress.style.width = (questionIndex + 1) * 4.55 + '%';
+ 
 
 };
 

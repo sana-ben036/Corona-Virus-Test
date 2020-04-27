@@ -385,7 +385,24 @@ footer .barre {
     .section #questionnaire .progressbar {
       height: 50px;
       border: 1px solid gainsboro;
-      background-color: rgba(220, 220, 220, 0.548); }
+      background-color: rgba(220, 220, 220, 0.349);
+      display: flex; }
+      .section #questionnaire .progressbar .count {
+        width: 5%;
+        font-size: large;
+        font-weight: 700;
+        margin: auto; }
+      .section #questionnaire .progressbar .tunel {
+        width: 90%;
+        height: 10px;
+        background-color: #D0E5F0;
+        border-radius: 13px;
+        margin: 20px auto; }
+        .section #questionnaire .progressbar .tunel .progress {
+          width: 4.55%;
+          height: 10px;
+          background-color: #1078AD;
+          border-radius: 13px; }
     .section #questionnaire .container {
       display: flex;
       flex-direction: column;
@@ -413,7 +430,13 @@ footer .barre {
           height: 80px;
           margin: auto; }
           .section #questionnaire .container .reponse label input[type="radio"] {
-            visibility: visible; }
+            visibility: hidden; }
+        .section #questionnaire .container .reponse input[type="radio"]:checked ~ span {
+          color: #F4CF1B; }
+        .section #questionnaire .container .reponse input[type="radio"]:checked ~ label {
+          background-color: #1078AD; }
+        .section #questionnaire .container .reponse input[type="radio"]:checked ~ i {
+          color: #F4CF1B; }
       .section #questionnaire .container .btn {
         display: flex;
         flex-direction: row;
@@ -422,6 +445,10 @@ footer .barre {
           width: 100px;
           height: 50px;
           font-size: large; }
+          .section #questionnaire .container .btn button:hover {
+            background-color: #D0E5F0;
+            border: 2px solid #1078AD;
+            color: #1078AD; }
         .section #questionnaire .container .btn #btn-step2 {
           display: none; }
   .section #resultat {

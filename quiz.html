@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./dist/css/import.css">
-        <<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <link
             href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap"
             rel="stylesheet">
@@ -68,15 +68,18 @@
             <div id="questionnaire">
 
                 <div class="progressbar">
-                    <div></div>
+                    <div class="count" id="count"></div>
+                    <div class="tunel">
+                        <div class="progress" id="progress"></div>
+                    </div>
                 </div>
                 <div class="container">
                     <div class="item question">
                         <p id='para'></p>
                     </div>
                     <div class="item reponse">
-                        <label for="choix1"><input id="choix1" type="radio" ><i class="fas fa-check"></i></input><span id="opt1"></span></label>
-                        <label for="choix2"><input id="choix2" type="radio" ><i class="fas fa-times"></i></input><span id="opt2"></span></label>  
+                        <label for="choix1" ><input id="choix1" type="radio" name="option" value="1"><i class="fas fa-check"></i></input><span id="opt1"></span></label>
+                        <label for="choix2" ><input id="choix2" type="radio" name="option" value="2"><i class="fas fa-times"></i></input><span id="opt2"></span></label>  
                     </div>
                     <div class="item btn">
                         <button type="button" id="btn-last">Précédent</button>
