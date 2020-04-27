@@ -2,8 +2,9 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./dist/css/import.css">
+        <<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <link
             href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap"
             rel="stylesheet">
@@ -69,21 +70,22 @@
                 <div class="progressbar">
                     <div></div>
                 </div>
-                <div class="question">
-                    <p id='q'>question?</p>
+                <div class="container">
+                    <div class="item question">
+                        <p id='para'></p>
+                    </div>
+                    <div class="item reponse">
+                        <label for="choix1"><input id="choix1" type="radio" ><i class="fas fa-check"></i></input><span id="opt1"></span></label>
+                        <label for="choix2"><input id="choix2" type="radio" ><i class="fas fa-times"></i></input><span id="opt2"></span></label>  
+                    </div>
+                    <div class="item btn">
+                        <button type="button" id="btn-last">Précédent</button>
+                        <button type="button"id="btn-next">Suivant</button>
+                        <button type="button"id="btn-step2">Terminer</button>
+                    </div>
+
                 </div>
-                <div class="reponse">
-                    <input id='opt1' type="radio">1</input>
-                    <input id='opt2' type="radio">2</input>
-                    <input id='opt3' type="radio">3</input>
-                    <input id='opt4' type="radio">4</input>
-                    
-                </div>
-                <div class="btn">
-                    <button type="button" id="btn-last">Précédent</button>
-                    <button type="button"id="btn-next">Suivant</button>
-                    <button type="button" id="btn-step2">Términer</button>
-                </div>
+                
             </div>
 
             <!--résultats-->

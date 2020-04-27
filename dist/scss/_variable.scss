@@ -4,6 +4,8 @@ $color3:#1078AD;
 $color4:#FFFFFF;
 $color5:#369D53;
 $color6:#7F7F7F;
+$color7:rgb(220, 220, 220);
+$color8:rgba(220, 220, 220, 0.548);
 $bgcolor1:#D0E5F0;
 $bgcolor2:#F4CF1B;
 $bgcolor3:#96C5DC;
@@ -22,11 +24,22 @@ body {
 
 }
 
-@mixin flex ($p1, $p2) {
-    display:$p1;
-    flex-direction: $p2;
+@mixin flex ($f,$d) {
+    display:$f;
+    flex-direction: $d;
+    
     
 }
+
+@mixin border ($w,$h,$m,$b,$br,$bgr) {
+    background-color:$bgr;
+    border: $b;
+    border-radius: $br;
+    width: $w;
+    height: $h;
+    margin: $m;   
+}
+
 @mixin menu__item {
     font-size: large;
     font-weight: 700;

@@ -97,20 +97,19 @@ let questionnaire = document.getElementById('questionnaire');
 let resultat = document.getElementById('resultat');
 let list = document.getElementsByClassName('list__item');
 
-let start= document.getElementById('btn-step1');
-let next= document.getElementById('btn-step2');
-let again = document.getElementById('btn-step3');
+let step1= document.getElementById('btn-step1');
+let step2= document.getElementById('btn-step2');
+let step3 = document.getElementById('btn-step3');
 
-start.addEventListener('click',moveStep2);
-next.addEventListener('click',moveStep3);
-again.addEventListener('click',moveStep1);
+step1.addEventListener('click',moveStep2);
+step2.addEventListener('click',moveStep3);
+step3.addEventListener('click',moveStep1);
 
 function moveStep2(){
     preambule.style.display='none';
     questionnaire.style.display='block';
     list[0].classList.remove('list__item--active');
     list[1].classList.add('list__item--active');
-    //stepper.classl= '-426px';
     
 }
 function moveStep3(){
@@ -120,7 +119,6 @@ function moveStep3(){
     list[1].classList.remove('list__item--active');
     list[2].classList.add('list__item--active');
     
-    //stepper.style.left= '-156px';
 }
 function moveStep1(){
     preambule.style.display='flex';
@@ -129,12 +127,79 @@ function moveStep1(){
     list[2].classList.remove('list__item--active');
     list[0].classList.add('list__item--active');
     
-    //stepper.style.left= '-696px';
 }
 
-// ::: afficher question
+// ::: afficher questions
 
-//document.getElementById('q').innerHTML= questions[0];
+var currentQuestion = 0;
+var totalQuestion = questions.length;
+var para = document.getElementById('para');
+var opt1 = document.getElementById('opt1');
+var opt2 = document.getElementById('opt2');
+let next= document.getElementById('btn-next');
+let last= document.getElementById('btn-last');
+
+next.addEventListener('click',loadNextQuestion);
+last.addEventListener('click',loadLastQuestion);
+
+
+function loadQuestion (questionIndex){
+    
+    
+    var q = questions[questionIndex];
+    para.textContent = q.question;
+    opt1.textContent = q.option1;
+    opt2.textContent = q.option2;
+
+
+};
+
+function loadNextQuestion(){
+
+    var selectOption = document.querySelector('input[type=radio]:checked');
+    if(!selectOption){
+        alert('SVP choisir une reponse!');
+        return;
+    }
+    
+    currentQuestion++;
+    if(currentQuestion == totalQuestion ){
+        next.style.display= 'none';
+        step2.style.display='block';
+        return;
+    }
+    loadQuestion(currentQuestion);
+}
+loadQuestion(currentQuestion);
+
+function loadLastQuestion(){
+
+    loadQuestion(currentQuestion -=1);
+}
+
+
+
+/*
+let next= document.getElementById('btn-next');
+let last= document.getElementById('btn-last');
+
+next.addEventListener('click',nextQuestion);
+last.addEventListener('click',lastQuestion);
+
+
+
+    function nextQuestion(){
+        for (i=0; i<questions.length ; i+=1){
+        q.innerHTML= questions[i].question;
+
+        }
+    }
+ 
+
+    function lastQuestion(){
+        q.innerHTML= questions[i-=1].question;
+    }
+*/
 
 
 

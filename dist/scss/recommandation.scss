@@ -9,6 +9,7 @@
     }
     .container{
         @include flex (flex,row);
+        flex-wrap: wrap;
         justify-content: space-between;
         .text{
             @include para ($color4,larger,600,left,1.5);
@@ -19,6 +20,7 @@
         .appel{
             @include position (relative,0,-50px,0);
             @include flex (flex,column);
+            flex-wrap: nowrap;
             justify-content: space-between;
             width: 20%;
             height: 220px;
@@ -27,12 +29,8 @@
             }
             p{
                 @include para ($color3,larger,700,center,1.5);
-                background-color:$bgcolor2 ;
-                border: 2px solid $bgcolor2;
-                border-radius: 5px;
-                width: 80%;
-                height: 60px;
-                margin: 0 auto;   
+                @include border (80%,60px,0 auto,2px solid $bgcolor2,5px,$bgcolor2 );
+                  
             }
             a:link{
                 text-decoration-color: $bgcolor2;

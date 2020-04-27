@@ -30,6 +30,7 @@
                         @include position (absolute,-10px,121px,0);
                         @include cercl (" ",40px,40px,1px solid transparent,40px,$bgcolor3);
                         z-index: -1;
+                        
                     }
                 }
             }
@@ -59,20 +60,58 @@
     }
     #questionnaire {
         display: none;
-        border: 1px solid $color6;
-        height: 535px;
-        .btn{
-            @include flex (flex,row);
+        border: 1px solid $color7;
+        border-radius: 5px;
+        .progressbar{
+            height: 50px;
+            border: 1px solid  $color7; 
+            background-color: $color8;
+
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
             width: 80%;
-            margin:10px auto;
-            justify-content: space-between;
-            button{
-                @extend .btn-style;
-                width: 100px;
-                height: 50px;
-                font-size: large;
+            margin: auto;
+            .item{
+                margin: 60px 0 20px 0;
+            }
+            .question{
+                p{
+                    @include para ($color6,larger,700,center,1.5);
+                }
+            }
+            .reponse{
+                display: flex;
+                label{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    @include border (120px,80px,auto,4px solid $color3,5px,$color4);
+                    input[type="radio"]{
+                        visibility: visible;
+                        
+                        
+                    }
+                }
+            }
+            .btn{
+                @include flex (flex,row);
+                justify-content: space-between;
+                button{
+                    @extend .btn-style;
+                    width: 100px;
+                    height: 50px;
+                    font-size: large;
+                    
+                }
+                #btn-step2{
+                    display: none;
+                }
             }
         }
+        
 
     }
     #resultat{
