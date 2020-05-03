@@ -80,7 +80,6 @@
                 border-radius: 13px;
                 margin: 20px auto;
                 .progress{
-                    width: 4.55%;
                     height: 10px;
                     background-color: $color3;
                     border-radius: 13px;
@@ -100,50 +99,51 @@
                 @include para ($color6,larger,700,center,1.5);
                 
             }
-            .reponse{
+            #form{
                 width: 60%;
                 margin-left: auto;
                 margin-right: auto;
                 @include flex (flex,column);
-                .option{
-                    @include flex (flex,row);
-                    .label-radio{
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        @include border (120px,80px,auto,4px solid $color3,5px,$color4);
-                        input[type="radio"]{
-                            visibility: hidden;
-            
-                        }
-                    }input[type="radio"]:checked ~ span{
-                        color: $bgcolor2;
+                @include flex (flex,row);
+                #label-radio{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    line-height: 2;
+                    font-weight: 700;
+                    font-size: large;
+                    color: $color3;
+                    @include border (120px,80px,auto,4px solid $color3,5px,$color4);
+                    input{
+                        visibility: hidden;
+        
                     }
-                    input[type="radio"]:checked ~ label {
-                        background-color: $color3;
+                }input[type="radio"]:checked ~ span{
+                    color: $bgcolor2;
+                }
+                input[type="radio"]:checked ~ .label-radio  {
+                    background-color: $color3;
+                }
+                input[type="radio"]:checked ~ i{
+                    color: $bgcolor2;
+                }
+                #label-number{
+                    width: 100%;
+                    justify-content: space-between;
+                    border: 1px solid $color2;
+                    color: $color6;
+                    font-size: medium;
+                    font-weight: 600;
+                    input{
+                        width: 90%;
+                        height: 32px;
+                        border: transparent;
                     }
-                    input[type="radio"]:checked ~ i{
-                        color: $bgcolor2;
-                    }
-                    .label-number{
-                        width: 100%;
-                        justify-content: space-between;
-                        border: 1px solid $color2;
-                        color: $color6;
-                        font-size: medium;
-                        font-weight: 600;
-                        input{
-                            width: 90%;
-                            height: 32px;
-                            border: transparent;
-                        }
-                        
-    
-                    }
+                    
                 }
                 
-               
+                
             }
             
             .btn{
@@ -160,10 +160,13 @@
                         color:$color3 ;
                     }
                     
+                    
                 }
                 #btn-step2{
                     display: none;
+                    
                 }
+                
             }
         }
         
