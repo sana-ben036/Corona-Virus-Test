@@ -471,5 +471,7 @@ footer .barre {
             color: #1078AD; }
         .section #questionnaire .container .btn #btn-step2 {
           display: none; }
+        .section #questionnaire .container .btn #btn-last {
+          visibility: visible; }
   .section #resultat {
     display: none; }

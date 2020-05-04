@@ -10,8 +10,14 @@ let questions = [
                 <input id="option2" type="radio" name="option" value="non"><i class="fas fa-times"></i><span>Non</span></label>`                         
 }, {
     question:`Quelle est votre température corporelle ?`,
-    options:`<label for="choix" id="label-number" >
-                <input id="choix" type="number" name="température" min="34" max="42" placeholder="34-42"> degrés </label> `
+    options:`<label for="choix" id="label-number">
+                <input id="choix" type="number" name="poid" min="20" max="250" placeholder="20-250"> kg </label>`
+    /*options:`<label for="choix" id="label-number" >
+                <input id="choix" type="number" name="age" min="15" max="110" placeholder="15-110"> ans </label> `  */
+    /*options:`<label for="choix" id="label-number" >
+                <input id="choix" type="number" name="température" min="34" max="42" placeholder="34-42"> degrés </label> `*/
+    /*options:`<label for="choix" id="label-number">
+                <input id="choix" type="number" name="taille" min="80" max="250" placeholder="80-250"> cm </label>` */
 },{
     question:`Ces derniers jours, avez-vous une toux ou une augmentation de votre toux habituelle ?`,
     options:`<label for="choix1" id="label-radio">
@@ -66,8 +72,9 @@ let questions = [
                 <input id="choix4" type="radio" name="option" value="Très fatigué(e)"><i class="far fa-dizzy"></i><span>Très fatigué(e)</span></label>`
 }, {
     question:`Quel est votre âge ? Ceci, afin de calculer un facteur de risque spécifique .`,
-    options:`<label for="choix" id="label-number">
-                <input id="choix" type="number" name="age" min="15" max="110" placeholder="15-110"> ans </label>`
+    options:`<label for="choix" id="label-number" >
+                <input id="choix" type="number" name="age" min="20" max="250" placeholder="20-250"> ans </label> ` 
+    
 }, {
     question:`Quel est votre poids ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection.`,
     options:`<label for="choix" id="label-number">
@@ -75,7 +82,7 @@ let questions = [
 }, {
     question:`Quelle est votre taille ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection.`,
     options:`<label for="choix" id="label-number">
-                <input id="choix" type="number" name="taille" min="80" max="250" placeholder="80-250"> cm </label>`
+                <input id="choix" type="number" name="taille" min="20" max="250" placeholder="20-250"> cm </label>`
 }, {
     question:`Avez-vous de l’hypertension artérielle mal équilibrée ? Ou avez-vous une maladie cardiaque ou vasculaire ? Ou prenez-vous un traitement à visée cardiologique ?`,
     options:`<label for="choix1" id="label-radio">
@@ -89,7 +96,6 @@ let questions = [
                 <input id="choix1" type="radio" name="option" value="oui"><i class="fas fa-check"></i><span>Oui</span></label><br>
             <label for="choix2" id="label-radio" >
                 <input id="choix2" type="radio" name="option" value="non"><i class="fas fa-times"></i><span>Non</span></label>`
-
 }, {
     question:`Avez-vous ou avez-vous eu un cancer ?`,
     options:`<label for="choix1" id="label-radio">
@@ -122,7 +128,7 @@ let questions = [
             <label for="choix2" id="label-radio" >
                 <input id="choix2" type="radio" name="option" value="non"><i class="fas fa-times"></i><span>Non</span></label>
             <label for="choix3" id="label-radio" >
-                <input id="choix2" type="radio" name="option" value="homme"><i class="fas fa-times"></i><span>Homme</span></label>`
+                <input id="choix3" type="radio" name="option" value="homme"><i class="fas fa-male"></i><span>Homme</span></label>`
 }, {
     question:`Avez-vous une maladie connue pour diminuer vos défenses immunitaires ?`,
     options:`<label for="choix1" id="label-radio">
@@ -158,7 +164,6 @@ function moveStep2(){
     questionnaire.style.display='block';
     list[0].classList.remove('list__item--active');
     list[1].classList.add('list__item--active');
-    
 }
 function moveStep3(){
     preambule.style.display='none';
@@ -174,6 +179,7 @@ function moveStep1(){
     resultat.style.display='none';
     list[2].classList.remove('list__item--active');
     list[0].classList.add('list__item--active');
+    
     
 }
 // ::: progressbar
@@ -203,44 +209,36 @@ function loadQuestion (questionIndex){
     form.innerHTML = q.options;
     count.textContent= (questionIndex + 1) + '/' + totalQuestion;
     progress.style.width = (questionIndex + 1) * 100/22 + '%';
-} ;
+
+    if(questionIndex > 0){
+        last.style.visibility='visible';
+    } else{
+        last.style.visibility='hidden';
+        return;
+    }
+    if(questionIndex === 21 ){
+        next.style.display= 'none';
+        step2.style.display='block';
+        return;  
+    }  
+    
+  
+};
 
 
 
 function loadNextQuestion(){
-                var selectN = document.querySelector('#choix');
-                
-                if (form.children[0].id === 'label-number'){
-                    var min = document.getElementById('choix').min;
-                    var max = document.getElementById('choix').max;  
-
-                    if(selectN.value == ''){
-                        alert('SVP choisir une valeur');
-                        return;
-                    
-                    } 
-                    if(selectN.value < min || selectN.value > max ){
-                        alert(`valeur doit etre entre ${min} et ${max} `);
-                        return;
-                        
-                    }
-                }else{
-                    var selectR = document.querySelector('input[type="radio"]:checked');
-                    if(!selectR){
-                        alert('SVP choisir une reponse!');
-                        return;
-                    }
-
-                }
     
-            
-                
+    validation(currentQuestion);            
     currentQuestion++;
-    if(currentQuestion == totalQuestion ){
+    
+    /*if(currentQuestion === 21 ){
         next.style.display= 'none';
         step2.style.display='block';
         return;
-    }
+        
+    }*/
+    
     loadQuestion(currentQuestion);
 }
 loadQuestion(currentQuestion);
@@ -248,6 +246,33 @@ loadQuestion(currentQuestion);
 function loadLastQuestion(){
 
     loadQuestion(currentQuestion -=1);
+   
+}
+
+function validation(){
+    var selectN = document.querySelector('#choix');
+    if (form.children[0].id === 'label-number'){
+        var min = document.getElementById('choix').min;
+        var max = document.getElementById('choix').max;  
+
+        if(selectN.value == ''){
+            alert('SVP choisir une valeur');
+            return;
+        
+        } 
+        if(selectN.value < min || selectN.value > max ){
+            alert(` la valeur doit etre entre ${min} et ${max} `);
+            return;
+            
+        }
+    }else{
+        var selectR = document.querySelector('input[type="radio"]:checked');
+        if(!selectR){
+            alert('SVP choisir une reponse!');
+            return;
+        }
+
+    }
 }
 
 
