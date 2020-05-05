@@ -10,14 +10,8 @@ let questions = [
                 <input id="option2" type="radio" name="option" value="non"><i class="fas fa-times"></i><span>Non</span></label>`                         
 }, {
     question:`Quelle est votre température corporelle ?`,
-    options:`<label for="choix" id="label-number">
-                <input id="choix" type="number" name="poid" min="20" max="250" placeholder="20-250"> kg </label>`
-    /*options:`<label for="choix" id="label-number" >
-                <input id="choix" type="number" name="age" min="15" max="110" placeholder="15-110"> ans </label> `  */
-    /*options:`<label for="choix" id="label-number" >
-                <input id="choix" type="number" name="température" min="34" max="42" placeholder="34-42"> degrés </label> `*/
-    /*options:`<label for="choix" id="label-number">
-                <input id="choix" type="number" name="taille" min="80" max="250" placeholder="80-250"> cm </label>` */
+    options:`<label for="choix" id="label-number" >
+                <input id="choix" type="number" name="température"  placeholder="34-42"> degrés </label> `
 },{
     question:`Ces derniers jours, avez-vous une toux ou une augmentation de votre toux habituelle ?`,
     options:`<label for="choix1" id="label-radio">
@@ -73,16 +67,16 @@ let questions = [
 }, {
     question:`Quel est votre âge ? Ceci, afin de calculer un facteur de risque spécifique .`,
     options:`<label for="choix" id="label-number" >
-                <input id="choix" type="number" name="age" min="20" max="250" placeholder="20-250"> ans </label> ` 
+                <input id="choix" type="number" name="age"  placeholder="15-110"> ans </label> `
     
 }, {
     question:`Quel est votre poids ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection.`,
     options:`<label for="choix" id="label-number">
-                <input id="choix" type="number" name="poid" min="20" max="250" placeholder="20-250"> kg </label>`
+                <input id="choix" type="number" name="poid"  placeholder="20-250"> kg </label>`
 }, {
     question:`Quelle est votre taille ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection.`,
     options:`<label for="choix" id="label-number">
-                <input id="choix" type="number" name="taille" min="20" max="250" placeholder="20-250"> cm </label>`
+                <input id="choix" type="number" name="taille"  placeholder="80-250"> cm </label>`
 }, {
     question:`Avez-vous de l’hypertension artérielle mal équilibrée ? Ou avez-vous une maladie cardiaque ou vasculaire ? Ou prenez-vous un traitement à visée cardiologique ?`,
     options:`<label for="choix1" id="label-radio">
@@ -145,15 +139,15 @@ let questions = [
 }  
 ]
 
-// :::move to next step (information/questionnaire/resultats)
-let preambule = document.getElementById('preambule');
-let questionnaire = document.getElementById('questionnaire');
-let resultat = document.getElementById('resultat');
-let list = document.getElementsByClassName('list__item');
-let step1= document.getElementById('btn-step1');
-let step2= document.getElementById('btn-step2');
-let step3 = document.getElementById('btn-step3');
+// :::move between steps (information/questionnaire/resultats)
 
+const preambule = document.getElementById('preambule');
+const questionnaire = document.getElementById('questionnaire');
+const resultat = document.getElementById('resultat');
+const list = document.getElementsByClassName('list__item');
+const step1= document.getElementById('btn-step1');
+const step2= document.getElementById('btn-step2');
+const step3 = document.getElementById('btn-step3');
 
 step1.addEventListener('click',moveStep2);
 step2.addEventListener('click',moveStep3);
@@ -164,6 +158,7 @@ function moveStep2(){
     questionnaire.style.display='block';
     list[0].classList.remove('list__item--active');
     list[1].classList.add('list__item--active');
+    
 }
 function moveStep3(){
     preambule.style.display='none';
@@ -179,28 +174,30 @@ function moveStep1(){
     resultat.style.display='none';
     list[2].classList.remove('list__item--active');
     list[0].classList.add('list__item--active');
+    window.location.reload();
     
     
 }
+
 // ::: progressbar
 
-var count = document.getElementById('count');
-var progress = document.getElementById('progress');
+const count = document.getElementById('count');
+const progress = document.getElementById('progress');
 
 
 // ::: afficher questions
 
-var currentQuestion = 0;
-var totalQuestion = questions.length;
-var question = document.getElementById('question');
-var options = document.getElementById('options');
-let next= document.getElementById('btn-next');
-let last= document.getElementById('btn-last');
-var form = document.getElementById('form');
+
+const totalQuestion = questions.length;
+const question = document.getElementById('question');
+const options = document.getElementById('options');
+const next = document.getElementById('btn-next');
+const back = document.getElementById('btn-last');
+const form = document.getElementById('form');
 
 
 next.addEventListener('click',loadNextQuestion);
-last.addEventListener('click',loadLastQuestion);
+back.addEventListener('click',loadLastQuestion);
 
 
 function loadQuestion (questionIndex){
@@ -210,70 +207,108 @@ function loadQuestion (questionIndex){
     count.textContent= (questionIndex + 1) + '/' + totalQuestion;
     progress.style.width = (questionIndex + 1) * 100/22 + '%';
 
+
     if(questionIndex > 0){
-        last.style.visibility='visible';
+        back.style.visibility='visible';
     } else{
-        last.style.visibility='hidden';
+        back.style.visibility='hidden';
         return;
     }
     if(questionIndex === 21 ){
         next.style.display= 'none';
         step2.style.display='block';
         return;  
-    }  
+    } else{
+        next.style.display= 'block';
+        step2.style.display='none';
+    }
     
-  
 };
 
+// ::: afficher next questions
+
+var currentQuestion = 0;
+var valeurs = [];
 
 
 function loadNextQuestion(){
-    
-    validation(currentQuestion);            
-    currentQuestion++;
-    
-    /*if(currentQuestion === 21 ){
-        next.style.display= 'none';
-        step2.style.display='block';
-        return;
-        
-    }*/
-    
-    loadQuestion(currentQuestion);
-}
-loadQuestion(currentQuestion);
 
-function loadLastQuestion(){
-
-    loadQuestion(currentQuestion -=1);
-   
-}
-
-function validation(){
-    var selectN = document.querySelector('#choix');
+    const selectN = document.querySelector('#choix');
+    
     if (form.children[0].id === 'label-number'){
-        var min = document.getElementById('choix').min;
-        var max = document.getElementById('choix').max;  
-
-        if(selectN.value == ''){
-            alert('SVP choisir une valeur');
-            return;
         
-        } 
-        if(selectN.value < min || selectN.value > max ){
-            alert(` la valeur doit etre entre ${min} et ${max} `);
+        //var min = document.getElementById('choix').min;
+        //var max = document.getElementById('choix').max; 
+        //var number = parseFloat(selectN.value);
+        
+        if(selectN.value === ' '){
+            alert('SVP choisir une valeur');
+            return ;
+        
+        }else if (currentQuestion === 1 && (selectN.value < 34 || selectN.value > 42)) {
+			alert('la temperature doit etre comprise entre 34 et 42');
+			return;
+		} else if (currentQuestion === 10 && (selectN.value < 15 || selectN.value > 110)) {
+			alert("l'age doit etre comprise entre 15 et 110");
+			return;
+		} else if (currentQuestion === 11 && (selectN.value < 20 || selectN.value > 250)) {
+			alert('le poids doit etre comprise entre 20 et 250');
+			return;
+		} else if (currentQuestion === 12 && (selectN.value < 80 || selectN.value > 250)) {
+			alert('la taille doit etre compris entre 80 et 250');
             return;
-            
+        }else{
+            var number = parseFloat(selectN.value);
+            valeurs.push(number);
+            console.log(valeurs);
+    
         }
+        /*else if (selectN.value < min || selectN.value > max ){
+            alert(` la valeur doit etre entre ${min} et ${max} `);
+            return ;
+            
+            
+        }*/
+        
     }else{
         var selectR = document.querySelector('input[type="radio"]:checked');
         if(!selectR){
             alert('SVP choisir une reponse!');
-            return;
-        }
+            return ;
+        }else{
+            
+            var value = selectR.getAttribute('value');
+            valeurs.push(value);
+            console.log(valeurs);
+            
 
+        }
     }
+    
+        
+        
+    currentQuestion++;
+    
+    loadQuestion(currentQuestion);
+    
 }
+loadQuestion(currentQuestion);
+
+
+// ::: afficher last questions
+
+function loadLastQuestion(){
+
+    currentQuestion -=1
+    valeurs.pop(currentQuestion); // supprimer la reponse enregister a la fin de tableau s'il ya un retour vers la question precedente (modification)
+
+    loadQuestion(currentQuestion );
+    console.log(valeurs);
+
+
+}
+
+
 
 
 
