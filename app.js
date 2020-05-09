@@ -11,7 +11,7 @@ let questions = [
 }, {
     question:`Quelle est votre température corporelle ?`,
     options:`<label for="choix" id="label-number" >
-                <input id="choix" type="number" name="température"  placeholder="34-42"> degrés </label> `
+                <input id="choix" type="number" name="température" placeholder="34-42"> degrés </label> `
 },{
     question:`Ces derniers jours, avez-vous une toux ou une augmentation de votre toux habituelle ?`,
     options:`<label for="choix1" id="label-radio">
@@ -68,7 +68,6 @@ let questions = [
     question:`Quel est votre âge ? Ceci, afin de calculer un facteur de risque spécifique .`,
     options:`<label for="choix" id="label-number" >
                 <input id="choix" type="number" name="age"  placeholder="15-110"> ans </label> `
-    
 }, {
     question:`Quel est votre poids ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection.`,
     options:`<label for="choix" id="label-number">
@@ -83,7 +82,6 @@ let questions = [
                 <input id="choix1" type="radio" name="option" value="oui"><i class="fas fa-check"></i><span>Oui</span></label><br>
             <label for="choix2" id="label-radio" >
                 <input id="choix2" type="radio" name="option" value="non"><i class="fas fa-times"></i><span>Non</span></label>`
-
 }, {
     question:`Êtes-vous diabétique ?`,
     options:`<label for="choix1" id="label-radio">
@@ -161,6 +159,11 @@ function moveStep2(){
     
 }
 function moveStep3(){
+    
+    //currentQuestion === 21;
+    //loadNextQuestion(currentQuestion);
+    
+
     preambule.style.display='none';
     questionnaire.style.display='none';
     resultat.style.display='block'
@@ -200,6 +203,7 @@ next.addEventListener('click',loadNextQuestion);
 back.addEventListener('click',loadLastQuestion);
 
 
+
 function loadQuestion (questionIndex){
     var q = questions[questionIndex];
     question.textContent = q.question;
@@ -228,24 +232,27 @@ function loadQuestion (questionIndex){
 // ::: afficher next questions
 
 var currentQuestion = 0;
-var valeurs = [];
+var reponses = [];
 
 
 function loadNextQuestion(){
-
-    const selectN = document.querySelector('#choix');
     
+    var selectN = document.getElementById('choix');
     if (form.children[0].id === 'label-number'){
         
-        //var min = document.getElementById('choix').min;
-        //var max = document.getElementById('choix').max; 
-        //var number = parseFloat(selectN.value);
+        //var valeur = parseFloat(selectN.value);
+        //var min = selectN.getAttribute('min');
+        //var max = selectN.getAttribute('max');
         
-        if(selectN.value === ' '){
+        if(!selectN.value){
             alert('SVP choisir une valeur');
             return ;
-        
-        }else if (currentQuestion === 1 && (selectN.value < 34 || selectN.value > 42)) {
+        }
+        /*else if (selectN.value < min || selectN.value > max ){
+            alert(` la valeur doit etre entre ${min} et ${max} `);
+            return ;   
+        }*/
+        else if (currentQuestion === 1 && (selectN.value < 34 || selectN.value > 42)) {
 			alert('la temperature doit etre comprise entre 34 et 42');
 			return;
 		} else if (currentQuestion === 10 && (selectN.value < 15 || selectN.value > 110)) {
@@ -258,18 +265,10 @@ function loadNextQuestion(){
 			alert('la taille doit etre compris entre 80 et 250');
             return;
         }else{
-            var number = parseFloat(selectN.value);
-            valeurs.push(number);
-            console.log(valeurs);
-    
+            var valeur = parseFloat(selectN.value);
+            reponses.push(valeur); // enregister la reponse dans le tableau ''valeurs"
+            console.log(reponses);
         }
-        /*else if (selectN.value < min || selectN.value > max ){
-            alert(` la valeur doit etre entre ${min} et ${max} `);
-            return ;
-            
-            
-        }*/
-        
     }else{
         var selectR = document.querySelector('input[type="radio"]:checked');
         if(!selectR){
@@ -278,19 +277,12 @@ function loadNextQuestion(){
         }else{
             
             var value = selectR.getAttribute('value');
-            valeurs.push(value);
-            console.log(valeurs);
-            
-
+            reponses.push(value);
+            console.log(reponses);
         }
-    }
-    
-        
-        
+    }   
     currentQuestion++;
-    
-    loadQuestion(currentQuestion);
-    
+    loadQuestion(currentQuestion);   
 }
 loadQuestion(currentQuestion);
 
@@ -300,12 +292,10 @@ loadQuestion(currentQuestion);
 function loadLastQuestion(){
 
     currentQuestion -=1
-    valeurs.pop(currentQuestion); // supprimer la reponse enregister a la fin de tableau s'il ya un retour vers la question precedente (modification)
+    reponses.pop(currentQuestion); // supprimer la reponse enregister a la fin de tableau s'il ya un retour vers la question precedente (modification)
 
     loadQuestion(currentQuestion );
-    console.log(valeurs);
-
-
+    console.log(reponses);
 }
 
 
