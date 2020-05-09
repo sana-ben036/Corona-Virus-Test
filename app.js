@@ -144,14 +144,15 @@ const questionnaire = document.getElementById('questionnaire');
 const resultat = document.getElementById('resultat');
 const list = document.getElementsByClassName('list__item');
 const step1= document.getElementById('btn-step1');
-const step2= document.getElementById('btn-step2');
+//const step2= document.getElementById('btn-step2');
 const step3 = document.getElementById('btn-step3');
 
 step1.addEventListener('click',moveStep2);
-step2.addEventListener('click',moveStep3);
+//step2.addEventListener('click',moveStep3);
 step3.addEventListener('click',moveStep1);
 
 function moveStep2(){
+    
     preambule.style.display='none';
     questionnaire.style.display='block';
     list[0].classList.remove('list__item--active');
@@ -159,27 +160,20 @@ function moveStep2(){
     
 }
 function moveStep3(){
-    
-    //currentQuestion === 21;
-    //loadNextQuestion(currentQuestion);
-    
-
     preambule.style.display='none';
     questionnaire.style.display='none';
-    resultat.style.display='block'
+    resultat.style.display='block';
     list[1].classList.remove('list__item--active');
-    list[2].classList.add('list__item--active');
-    
+    list[2].classList.add('list__item--active');     
 }
+
 function moveStep1(){
     preambule.style.display='flex';
     questionnaire.style.display='none';
     resultat.style.display='none';
     list[2].classList.remove('list__item--active');
     list[0].classList.add('list__item--active');
-    window.location.reload();
-    
-    
+    window.location.reload();   
 }
 
 // ::: progressbar
@@ -214,19 +208,14 @@ function loadQuestion (questionIndex){
 
     if(questionIndex > 0){
         back.style.visibility='visible';
-    } else{
+    }else{
         back.style.visibility='hidden';
-        return;
     }
-    if(questionIndex === 21 ){
-        next.style.display= 'none';
-        step2.style.display='block';
-        return;  
+    if(questionIndex === 21){
+        next.textContent= 'Terminer';
     } else{
-        next.style.display= 'block';
-        step2.style.display='none';
+        next.textContent= 'Suivant';
     }
-    
 };
 
 // ::: afficher next questions
@@ -236,7 +225,6 @@ var reponses = [];
 
 
 function loadNextQuestion(){
-    
     var selectN = document.getElementById('choix');
     if (form.children[0].id === 'label-number'){
         
@@ -281,10 +269,17 @@ function loadNextQuestion(){
             console.log(reponses);
         }
     }   
+    if (reponses.length === 22){
+        moveStep3();
+        
+    }
     currentQuestion++;
-    loadQuestion(currentQuestion);   
+    loadQuestion(currentQuestion); 
+    
 }
 loadQuestion(currentQuestion);
+
+
 
 
 // ::: afficher last questions

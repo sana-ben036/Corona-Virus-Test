@@ -469,6 +469,6 @@ footer .barre {
         .section .questionnaire .container .btn #btn-step2 {
           display: none; }
         .section .questionnaire .container .btn #btn-last {
-          visibility: visible; }
+          visibility: hidden; }
   .section .resultat {
     display: none; }
