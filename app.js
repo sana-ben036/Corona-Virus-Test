@@ -3,6 +3,7 @@
 
 let questions = [
     {
+    
     question:`Pensez-vous avoir ou avoir eu de la fièvre ces 10 derniers jours (frissons, sueurs) ?`,
     options:`<label for="option1" id="label-radio">
                 <input id="option1" type="radio" name="option" value="oui"><i class="fas fa-check"></i><span>Oui</span></label><br>
@@ -164,7 +165,8 @@ function moveStep3(){
     questionnaire.style.display='none';
     resultat.style.display='block';
     list[1].classList.remove('list__item--active');
-    list[2].classList.add('list__item--active');     
+    list[2].classList.add('list__item--active');
+       
 }
 
 function moveStep1(){
@@ -270,7 +272,8 @@ function loadNextQuestion(){
         }
     }   
     if (reponses.length === 22){
-        moveStep3();
+        moveStep3();   // passer à l interface de resultat
+        getResult();   // avoir un text de resultat selon les reponses choisies
         
     }
     currentQuestion++;
@@ -291,6 +294,33 @@ function loadLastQuestion(){
 
     loadQuestion(currentQuestion );
     console.log(reponses);
+}
+
+
+// ::: avoir le resultat de test
+
+getR = document.getElementById('getResult');
+
+function getResult (){
+    
+     // if all symptomes exist
+
+    if (reponses[0,2,3,4,5,6,7,8] === 'oui'&&
+        (reponses[1] >= 39 || reponses[1] <= 35) &&
+        /*reponses[2] === 'oui' &&
+        reponses[3] === 'oui' &&
+        reponses[4] === 'oui' &&
+        reponses[5] === 'oui' &&
+        reponses[6] === 'oui' &&
+        reponses[7] === 'oui' &&
+        reponses[8] === 'oui' &&*/
+        (reponses[9] === 'Fatigué(e)' || reponses[10] === 'Très fatigué')
+        ) {
+            getR.textContent = 'SVP appler 141'
+        
+    }else{
+        getR.textContent = 'Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation. Pour toute information concernant le Covid-19 allez vers la page d’accueil.'
+    }
 }
 
 
