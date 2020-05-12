@@ -166,7 +166,7 @@ function moveStep3(){
     resultat.style.display='block';
     list[1].classList.remove('list__item--active');
     list[2].classList.add('list__item--active');
-       
+
 }
 
 function moveStep1(){
@@ -238,10 +238,6 @@ function loadNextQuestion(){
             alert('SVP choisir une valeur');
             return ;
         }
-        /*else if (selectN.value < min || selectN.value > max ){
-            alert(` la valeur doit etre entre ${min} et ${max} `);
-            return ;   
-        }*/
         else if (currentQuestion === 1 && (selectN.value < 34 || selectN.value > 42)) {
 			alert('la temperature doit etre comprise entre 34 et 42');
 			return;
@@ -299,28 +295,123 @@ function loadLastQuestion(){
 
 // ::: avoir le resultat de test
 
-getR = document.getElementById('getResult');
+const getR = document.getElementById('getResult');
+
 
 function getResult (){
-    
-     // if all symptomes exist
+        let facteurGmin ;
+        let facteurGmaj;
+        let facteurProno;
 
-    if (reponses[0,2,3,4,5,6,7,8] === 'oui'&&
-        (reponses[1] >= 39 || reponses[1] <= 35) &&
-        /*reponses[2] === 'oui' &&
-        reponses[3] === 'oui' &&
-        reponses[4] === 'oui' &&
-        reponses[5] === 'oui' &&
-        reponses[6] === 'oui' &&
-        reponses[7] === 'oui' &&
-        reponses[8] === 'oui' &&*/
-        (reponses[9] === 'Fatigué(e)' || reponses[10] === 'Très fatigué')
-        ) {
-            getR.textContent = 'SVP appler 141'
-        
-    }else{
-        getR.textContent = 'Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation. Pour toute information concernant le Covid-19 allez vers la page d’accueil.'
-    }
+        // determiner les facteurs de gravités :
+        // 1 : mineur
+        if((reponses[0] === 'oui' && reponses[1] >= 39) || reponses[6] === 'oui' || (reponses[9] === 'Fatigué(e)' || reponses[9] === 'Très fatigué')){ 
+
+            facteurGmin = true; // au moins un seul facteur de gravité mineur est validé ou plus
+
+        }else {
+            facteurGmin = false; // aucun facteur de gravité mineur 
+        }
+        if (
+            ((reponses[0] === 'oui' && reponses[1] >= 39) && reponses[6] === 'oui')||
+            ((reponses[0] === 'oui' && reponses[1] >= 39) && (reponses[9] === 'Fatigué(e)' || reponses[9] === 'Très fatigué'))||
+            (reponses[6] === 'oui' && (reponses[9] === 'Fatigué(e)' || reponses[9] === 'Très fatigué'))){
+            
+                facteurGmin = 2; // deux facteurs de gravité mineur sont validés
+        }else if (
+            ((reponses[0] === 'oui' && reponses[1] >= 39) && reponses[6] === 'non' && (reponses[9] === 'Bien' || reponses[9] === 'Assez bien'))||
+            ((reponses[0] === 'non' && reponses[1] < 39) && reponses[6] === 'oui' && (reponses[9] === 'Bien' || reponses[9] === 'Assez bien'))||
+            ((reponses[0] === 'non' && reponses[1] >= 39) && reponses[6] === 'non' && (reponses[9] === 'Fatigué(e)' || reponses[9] === 'Très fatigué'))){
+
+              facteurGmin = 1;  // un seul facteurs de gravité mineur est validé
+
+        }
+
+        // 2 : majeur
+        if((reponses[0] === 'oui' && reponses[1] <= 35) || reponses[7] === 'oui' || reponses[8] === 'oui'){
+
+            facteurGmaj = true; // au moins un facteur de gravité majeur est validé
+        }else {
+
+            facteurGmaj = false; // aucun facteur de gravité majeur
+        }
+
+        // determiner les facteurs pronostiques :
+        if (reponses[10] >= 70 || reponses[13] === 'oui' || reponses[14] === 'oui' ||
+            reponses[15] === 'oui' || reponses[16] === 'oui' || reponses[17] === 'oui' ||
+            reponses[18] === 'oui' || reponses[19] === 'oui' || reponses[20] === 'oui' || reponses[21] === 'oui'){
+
+                facteurProno = true; // au moins un facteur prono est validé
+            }else{
+                facteurProno = false; // aucun facteur prono
+            }
+
+
+        //  analyser les cas selon les symptomes:
+        // cas 1 : Patient avec fièvre, ou toux + mal de gorge, ou toux + courbatures ou fièvre + diarrhée :
+
+        if  (reponses[0] === 'oui'  || 
+            (reponses[2] === 'oui' && reponses[3] === 'oui' )||
+            (reponses[2] === 'oui' && reponses[4] === 'oui' )||
+            (reponses[0] === 'oui' && reponses[5] === 'oui' )) {
+
+            if(facteurProno == false && facteurGmaj == false && facteurGmin == false &&  reponses[10] < 50){
+                getR.textContent = `Nous vous conseillons de rester à votre domicile et
+                de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez
+                aussi utiliser à nouveau l’application pour réévaluer vos symptômes.`;
+
+            }else if (facteurProno == false && facteurGmaj == false &&  (reponses[10] > 50 || reponses[10] < 69 )){
+                getR.textContent =`Téléconsultation ou médecin généraliste ou visite à domicile`;
+
+            }else if (facteurProno == true && facteurGmaj == false && facteurGmin == false){
+                getR.textContent =`Téléconsultation ou médecin généraliste ou visite à domicile`;
+
+            }else if (facteurProno == true && facteurGmaj == false && facteurGmin === 1){
+                getR.textContent =`Svp Appeler 141`;
+
+            }else if (facteurProno == true && facteurGmaj == false && facteurGmin === 2){
+                getR.textContent =`Svp Appeler 141`;
+
+            }else if (facteurGmaj == true){
+                getR.textContent =`Svp Appeler 141`;
+            }
+        }  // cas 2 : Patient avec fièvre + toux  :
+
+        else if (reponses[0] === 'oui' && reponses[2] === 'oui'){
+            if(facteurProno == false && facteurGmaj == false && (facteurGmin == false || facteurGmin == true)){
+
+                getR.textContent=`téléconsultation ou médecin généraliste ou visite à domicile`;
+
+            }else if (facteurProno == true && facteurGmaj == false && (facteurGmin == false || facteurGmin === 1)){
+                getR.textContent=`téléconsultation ou médecin généraliste ou visite à domicile`;
+
+            }else if (facteurProno == true && facteurGmaj == false && facteurGmin === 2){
+                getR.textContent =`Svp Appeler 141`;
+
+            }else if (facteurGmaj == true){
+                getR.textContent =`Svp Appeler 141`;
+            }
+
+        }// cas 3 : Patient avec fièvre ou toux ou mal de gorge ou courbatures :
+
+        else if (reponses[0] === 'oui' ||  reponses[2] === 'oui' || reponses[3] === 'oui' || reponses[4] === 'oui'){
+            if (facteurProno == false && facteurGmaj == false && facteurGmin == false){
+                getR.textContent =`Votre situation ne relève probablement pas du Covid-19. Consultez votre
+                médecin au moindre doute`;
+            }else if(facteurProno == true || facteurGmaj == true ||  facteurGmin == true ) {
+                getR.textContent = 'Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141.';
+
+            }
+
+        }//cas 4 :Tout patient avec aucun symptôme :
+        else if ((reponses[0] === 'non' &&  reponses[2] === 'non' && reponses[3] === 'non' && reponses[4] === 'non')){
+            getR.textContent=`Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation. Pour toute information concernant le Covid-19 allez vers la page d’accueil.`;
+
+        }
+
+
+
+
 }
 
 
