@@ -305,7 +305,7 @@ function getResult (){
 
         // determiner les facteurs de gravités :
         // 1 : mineur
-        if((reponses[0] === 'oui' && reponses[1] >= 39) || reponses[6] === 'oui' || (reponses[9] === 'Fatigué(e)' || reponses[9] === 'Très fatigué')){ 
+        if((reponses[0] === 'oui' && reponses[1] >= 39) || reponses[6] === 'oui' || (reponses[9] === 'Fatigué(e)' || reponses[9] === 'Très fatigué(e)')){ 
 
             facteurGmin = true; // au moins un seul facteur de gravité mineur est validé ou plus
 
@@ -314,14 +314,14 @@ function getResult (){
         }
         if (
             ((reponses[0] === 'oui' && reponses[1] >= 39) && reponses[6] === 'oui')||
-            ((reponses[0] === 'oui' && reponses[1] >= 39) && (reponses[9] === 'Fatigué(e)' || reponses[9] === 'Très fatigué'))||
-            (reponses[6] === 'oui' && (reponses[9] === 'Fatigué(e)' || reponses[9] === 'Très fatigué'))){
+            ((reponses[0] === 'oui' && reponses[1] >= 39) && (reponses[9] === 'Fatigué(e)' || reponses[9] === 'Très fatigué(e)'))||
+            (reponses[6] === 'oui' && (reponses[9] === 'Fatigué(e)' || reponses[9] === 'Très fatigué(e)'))){
             
                 facteurGmin = 2; // deux facteurs de gravité mineur sont validés
         }else if (
             ((reponses[0] === 'oui' && reponses[1] >= 39) && reponses[6] === 'non' && (reponses[9] === 'Bien' || reponses[9] === 'Assez bien'))||
             ((reponses[0] === 'non' && reponses[1] < 39) && reponses[6] === 'oui' && (reponses[9] === 'Bien' || reponses[9] === 'Assez bien'))||
-            ((reponses[0] === 'non' && reponses[1] >= 39) && reponses[6] === 'non' && (reponses[9] === 'Fatigué(e)' || reponses[9] === 'Très fatigué'))){
+            ((reponses[0] === 'non' && reponses[1] >= 39) && reponses[6] === 'non' && (reponses[9] === 'Fatigué(e)' || reponses[9] === 'Très fatigué(e)'))){
 
               facteurGmin = 1;  // un seul facteurs de gravité mineur est validé
 
@@ -375,7 +375,7 @@ function getResult (){
             }else if (facteurGmaj == true){
                 getR.textContent =`Svp Appeler 141`;
             }
-        }  // cas 2 : Patient avec fièvre + toux  :
+        } // cas 2 : Patient avec fièvre + toux  :
 
         else if (reponses[0] === 'oui' && reponses[2] === 'oui'){
             if(facteurProno == false && facteurGmaj == false && (facteurGmin == false || facteurGmin == true)){
@@ -392,12 +392,16 @@ function getResult (){
                 getR.textContent =`Svp Appeler 141`;
             }
 
-        }// cas 3 : Patient avec fièvre ou toux ou mal de gorge ou courbatures :
+        }// cas 3 : Patient avec un seul sympthome : fièvre ou toux ou mal de gorge ou courbatures  (note: il faut eliminer la fievre ici ,sinon le test va analyser le cas 1)
 
-        else if (reponses[0] === 'oui' ||  reponses[2] === 'oui' || reponses[3] === 'oui' || reponses[4] === 'oui'){
-            if (facteurProno == false && facteurGmaj == false && facteurGmin == false){
-                getR.textContent =`Votre situation ne relève probablement pas du Covid-19. Consultez votre
-                médecin au moindre doute`;
+        else if ((reponses[0] === 'oui' &&  reponses[2] === 'non' && reponses[3] === 'non' &&  reponses[4] === 'non')||
+                (reponses[0] === 'non' &&  reponses[2] === 'oui' && reponses[3] === 'non' &&  reponses[4] === 'non') ||
+                (reponses[0] === 'non' &&  reponses[2] === 'non' && reponses[3] === 'oui' &&  reponses[4] === 'non')||
+                (reponses[0] === 'non' &&  reponses[2] === 'non' && reponses[3] === 'non' &&  reponses[4] === 'oui')){
+                    
+            if ( facteurProno == false && facteurGmaj == false && facteurGmin == false){
+                getR.textContent =`Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute`;
+
             }else if(facteurProno == true || facteurGmaj == true ||  facteurGmin == true ) {
                 getR.textContent = 'Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141.';
 
@@ -407,6 +411,8 @@ function getResult (){
         else if ((reponses[0] === 'non' &&  reponses[2] === 'non' && reponses[3] === 'non' && reponses[4] === 'non')){
             getR.textContent=`Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation. Pour toute information concernant le Covid-19 allez vers la page d’accueil.`;
 
+        }else{
+            getR.textContent= `ERROR`;
         }
 
 
