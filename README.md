@@ -15,7 +15,7 @@ Résultat :
 - Un test fonctionne bien apres une evalusation et un traitement des cas possibles.
 - Un site web trés utile et riche repondant aux besoins des individus .
 
-Valeur à jouter : 
+Valeur ajoutée : 
 - Exploiter et Evaluer mes competences en HTML5, CSS3, SASS , Javascript , npm et node.js
 - Avoir une competence d'analyser un algorithme réel et realiser une implimentation .
 
