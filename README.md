@@ -1,4 +1,5 @@
-Verion Desktop d'un Projet Corona virus Test 
+Projet Corona virus Test 
+https://sana-ben036.github.io/Corona-Virus-Test/
 
 Objectif : 
 - Avoir des informations de bases concernant les symptomes .
